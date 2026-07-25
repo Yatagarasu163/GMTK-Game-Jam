@@ -21,9 +21,6 @@ size = Vector2(128, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ioeof"]
 size = Vector2(1855, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_73dhi"]
-size = Vector2(1855, 20)
-
 [node name="Lightning Rods" type="Node2D" unique_id=1430730632 groups=["ROD"]]
 script = ExtResource("1_73dhi")
 lightning = ExtResource("2_8nm43")
@@ -43,14 +40,6 @@ position = Vector2(74, 0)
 position = Vector2(917.5, 0)
 shape = SubResource("RectangleShape2D_ioeof")
 
-[node name="Up" type="Area2D" parent="." unique_id=344194649]
-position = Vector2(0, -74)
-rotation = -1.5707964
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Up" unique_id=2059151424]
-position = Vector2(917.5, 0)
-shape = SubResource("RectangleShape2D_ioeof")
-
 [node name="Down" type="Area2D" parent="." unique_id=930169539]
 position = Vector2(0, 74)
 rotation = 1.5707964
@@ -59,15 +48,5 @@ rotation = 1.5707964
 position = Vector2(917.5, 0)
 shape = SubResource("RectangleShape2D_ioeof")
 
-[node name="Left" type="Area2D" parent="." unique_id=1006104507]
-position = Vector2(-74, 0)
-rotation = -3.1415927
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Left" unique_id=27448087]
-position = Vector2(917.5, 0)
-shape = SubResource("RectangleShape2D_73dhi")
-
 [connection signal="area_entered" from="Right" to="." method="_on_right_area_entered"]
-[connection signal="area_entered" from="Up" to="." method="_on_up_area_entered"]
 [connection signal="area_entered" from="Down" to="." method="_on_down_area_entered"]
-[connection signal="area_entered" from="Left" to="." method="_on_left_area_entered"]

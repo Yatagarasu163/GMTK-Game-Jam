@@ -11,12 +11,10 @@ extends Node2D
 #6) If lightning rod comes first, zap only the first lightning rod, then check if player in between the two lightning rods
 
 var right_array: Array[Node2D] = [];
-var left_array: Array[Node2D] = [];
-var up_array: Array[Node2D] = [];
 var down_array: Array[Node2D] = [];
 
-@export var tilemap: TileMapLayer;
-@export var lightning: PackedScene;
+@export var tilemap: TileMapLayer
+@export var lightning: PackedScene
 
 func _ready() -> void:
 	lightning = preload("res://assets/prefabs/lightning_strike.tscn");
@@ -28,25 +26,11 @@ func _on_right_area_entered(area: Area2D) -> void:
 		if object.global_position != global_position && !right_array.has(object) && area.name == "Hitbox":
 			right_array.append(object);
 
-func _on_up_area_entered(area: Area2D) -> void:
-	var object = area.get_parent();
-	if object.is_in_group("WALL") || object.is_in_group("PLAYER") || object.is_in_group("ROD"):
-		if object.global_position != global_position && !up_array.has(object) && area.name == "Hitbox":
-			up_array.append(object);
-		
-		
-
 func _on_down_area_entered(area: Area2D) -> void:
 	var object = area.get_parent();
 	if object.is_in_group("WALL") || object.is_in_group("PLAYER") || object.is_in_group("ROD"):
 		if object.global_position != global_position && !down_array.has(object) && area.name == "Hitbox":
 			down_array.append(object);
-
-func _on_left_area_entered(area: Area2D) -> void:
-	var object = area.get_parent();
-	if object.is_in_group("WALL") || object.is_in_group("PLAYER") || object.is_in_group("ROD"):
-		if object.global_position != global_position && !left_array.has(object) && area.name == "Hitbox":
-			left_array.append(object);
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("jump"):
@@ -58,13 +42,6 @@ func resolve_lightning() -> void:
 	right_array.sort_custom(sort_right);
 	print(rod_name, " Right Array: ", right_array);
 	cast_lightning(right_array, Vector2.RIGHT);
-	
-	left_array.sort_custom(sort_left);
-	print(rod_name, " Left Array: ", left_array);
-	#cast_lightning(left_array, Vector2.LEFT);
-	
-	up_array.sort_custom(sort_up);
-	print(rod_name, " Up Array: ", up_array);
 	
 	down_array.sort_custom(sort_down);
 	print(rod_name, " Down Array: ", down_array);

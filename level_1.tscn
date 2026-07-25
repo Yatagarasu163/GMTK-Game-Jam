@@ -97,6 +97,11 @@ position = Vector2(288, 288.00003)
 scale = Vector2(0.45, 0.45)
 rod_name = "Rod 1"
 
+[node name="Lightning Rods2" parent="." unique_id=2039282195 instance=ExtResource("1_3hls8")]
+position = Vector2(352, 352)
+scale = Vector2(0.45, 0.45)
+rod_name = "Rod 1"
+
 [node name="Lightning Rods4" parent="." unique_id=741082064 instance=ExtResource("1_3hls8")]
 position = Vector2(1056.0001, 288)
 scale = Vector2(0.45, 0.45)
