@@ -3,29 +3,46 @@
 [ext_resource type="Script" uid="uid://ctk0r5nikli70" path="res://assets/scripts/main_menu.gd" id="1_7vrkn"]
 [ext_resource type="Texture2D" uid="uid://otmod6nckeaw" path="res://icon.svg" id="2_fu7sn"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_7vrkn"]
+font_size = 65
+
 [sub_resource type="LabelSettings" id="LabelSettings_op1xx"]
 font_size = 32
 
-[node name="Main Menu" type="Node2D" unique_id=142694051 node_paths=PackedStringArray("buttons")]
+[node name="Main Menu" type="Node2D" unique_id=142694051 node_paths=PackedStringArray("items")]
 script = ExtResource("1_7vrkn")
-buttons = [NodePath("CanvasLayer/Button"), NodePath("CanvasLayer/Button2")]
+items = [NodePath("CanvasLayer/Title"), NodePath("CanvasLayer/Button"), NodePath("CanvasLayer/Button2")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=899947347]
-offset = Vector2(0, 500)
-rotation = -0.43633232
-transform = Transform2D(0.90630776, -0.42261827, 0.42261827, 0.90630776, 0, 500)
+scale = Vector2(0.99999994, 0.99999994)
+transform = Transform2D(0.99999994, 0, 0, 0.99999994, 0, 0)
 
 [node name="Title" type="Label" parent="CanvasLayer" unique_id=852015172]
-offset_right = 40.0
-offset_bottom = 23.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -232.0
+offset_top = 350.0
+offset_right = 232.0
+offset_bottom = 440.0
+grow_horizontal = 2
+text = "DYNAMITE BOI"
+label_settings = SubResource("LabelSettings_7vrkn")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=750115428]
-anchors_preset = 4
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = -32.0
-offset_right = 192.0
-offset_bottom = 32.0
+offset_left = -96.0
+offset_top = -40.0
+offset_right = 96.0
+offset_bottom = 24.0
+grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Button" unique_id=447326387]
@@ -50,12 +67,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button2" type="Button" parent="CanvasLayer" unique_id=384818424]
-anchors_preset = 4
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -96.0
 offset_top = 110.0
-offset_right = 192.0
+offset_right = 96.0
 offset_bottom = 174.0
+grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Button2" unique_id=1062047068]
