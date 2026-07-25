@@ -16,10 +16,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqmmp"]
-size = Vector2(128, 128)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ioeof"]
-size = Vector2(1855, 20)
+size = Vector2(120, 120)
 
 [node name="Lightning Rods" type="Node2D" unique_id=1430730632 groups=["ROD"]]
 script = ExtResource("1_73dhi")
@@ -28,25 +25,16 @@ lightning = ExtResource("2_8nm43")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=875466999]
 sprite_frames = SubResource("SpriteFrames_jqmmp")
 
-[node name="Hitbox" type="Area2D" parent="." unique_id=358568136]
+[node name="Hitbox" type="Area2D" parent="." unique_id=358568136 groups=["ROD"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=361764985]
 shape = SubResource("RectangleShape2D_jqmmp")
 
-[node name="Right" type="Area2D" parent="." unique_id=501069268]
-position = Vector2(74, 0)
+[node name="Check Hitbox" type="Area2D" parent="." unique_id=69636173]
+disable_mode = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Right" unique_id=1949941546]
-position = Vector2(917.5, 0)
-shape = SubResource("RectangleShape2D_ioeof")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Check Hitbox" unique_id=1114796991]
+shape = SubResource("RectangleShape2D_jqmmp")
 
-[node name="Down" type="Area2D" parent="." unique_id=930169539]
-position = Vector2(0, 74)
-rotation = 1.5707964
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Down" unique_id=1997076006]
-position = Vector2(917.5, 0)
-shape = SubResource("RectangleShape2D_ioeof")
-
-[connection signal="area_entered" from="Right" to="." method="_on_right_area_entered"]
-[connection signal="area_entered" from="Down" to="." method="_on_down_area_entered"]
+[connection signal="area_entered" from="Check Hitbox" to="." method="_on_check_hitbox_area_entered"]
+[connection signal="body_entered" from="Check Hitbox" to="." method="_on_check_hitbox_body_entered"]
