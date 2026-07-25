@@ -57,9 +57,11 @@ func resolve_lightning() -> void:
 	# Sorting array for positions
 	right_array.sort_custom(sort_right);
 	print(rod_name, " Right Array: ", right_array);
+	cast_lightning(right_array, Vector2.RIGHT);
 	
 	left_array.sort_custom(sort_left);
 	print(rod_name, " Left Array: ", left_array);
+	#cast_lightning(left_array, Vector2.LEFT);
 	
 	up_array.sort_custom(sort_up);
 	print(rod_name, " Up Array: ", up_array);
@@ -68,26 +70,43 @@ func resolve_lightning() -> void:
 	print(rod_name, " Down Array: ", down_array);
 	
 	print("\n");
-	
-	var target_position_right: Vector2i;
-	
-	for item in right_array:
-		if item.is_in_group("ROD"):
-			target_position_right = tilemap.local_to_map(tilemap.to_local(item.global_position));
-			print("Target position: ", target_position_right)
+
+
+func cast_lightning(direction_array: Array[Node2D], direction_vector: Vector2) -> void:
+	var target_array:Array[Node2D] = direction_array;
+	var target_position: Vector2i;
+	for item in target_array:
+		if item.is_in_group("WALL"):
 			break;
-	
-	var current_x_pos: int = tilemap.local_to_map(tilemap.to_local(global_position)).x + 1;
-	
-	
-	while current_x_pos < target_position_right.x: 
-		var eh:Node2D = lightning.instantiate();
-		get_parent().add_child(eh); 
-		eh.global_position = tilemap.map_to_local(tilemap.to_global(Vector2i(current_x_pos, tilemap.local_to_map(position).y)));
+		if item.is_in_group("ROD"):
+			target_position = tilemap.local_to_map(tilemap.to_local(item.global_position));
+			print("Target position: ", target_position);
+			break;
+			
+	if direction_vector == Vector2.RIGHT || direction_vector == Vector2.LEFT:
+		var current_x_pos: int = tilemap.local_to_map(tilemap.to_local(global_position)).x + direction_vector.x;
+		#var current_pos: Vector2i = tilemap.local_to_map(global_position + (direction_vector));
 		
-		print(tilemap.local_to_map(eh.global_position));
-		current_x_pos += 1;
-	
+		while current_x_pos != target_position.x:
+			print("Current position: ", current_x_pos);
+			var lightning_visual:Node2D = lightning.instantiate();
+			get_parent().add_child(lightning_visual);
+			#lightning_visual.global_position = tilemap.map_to_local(tilemap.to_global(lightning_visual.global_position + direction_vector))
+			lightning_visual.global_position = tilemap.map_to_local(tilemap.to_global(Vector2i(current_x_pos, target_position.y)));
+			
+			print(tilemap.local_to_map(lightning_visual.global_position));
+			current_x_pos += (1 * direction_vector.x);
+	elif direction_vector == Vector2.UP || direction_vector == Vector2.DOWN:
+		var current_y_pos : int = tilemap.local_to_map(tilemap.to_local(global_position)).y + direction_vector.y;
+		
+		while current_y_pos != target_position.y:
+			var lightning_visual:Node2D = lightning.instantiate();
+			get_parent().add_child(lightning_visual);
+			lightning_visual.global_position = tilemap.map_to_local(tilemap.to_global(Vector2i(target_position.x, current_y_pos)));
+			
+			print(tilemap.local_to_map(lightning_visual.global_position));
+			current_y_pos += (1 * direction_vector.y);
+
 func sort_right(a, b) -> bool:
 	return a.global_position.x < b.global_position.x;
 	
