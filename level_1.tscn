@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://bpsgh502f7ys5"]
 
+[ext_resource type="PackedScene" uid="uid://b4mt5v5jektgy" path="res://Prefabs/round_manager.tscn" id="1_hbghi"]
+[ext_resource type="PackedScene" uid="uid://cut33rjbus1nb" path="res://Prefabs/gamestatechecker.tscn" id="2_hn12h"]
+
 [node name="Level 1" type="Node2D" unique_id=512610027]
+
+[node name="Round Manager" parent="." unique_id=1680496311 instance=ExtResource("1_hbghi")]
+
+[node name="Gamestatechecker" parent="." unique_id=985095345 node_paths=PackedStringArray("round_manager") instance=ExtResource("2_hn12h")]
+round_manager = NodePath("../Round Manager")
