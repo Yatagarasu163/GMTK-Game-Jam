@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://dxemsreci3o14"]
+
+[ext_resource type="Script" uid="uid://uwl2smd8h03y" path="res://assets/scripts/option_menu.gd" id="1_cq70r"]
+[ext_resource type="Texture2D" uid="uid://otmod6nckeaw" path="res://icon.svg" id="2_jlp4j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lfi5k"]
+font_size = 65
+
+[sub_resource type="LabelSettings" id="LabelSettings_bdn42"]
+font_size = 32
+
+[node name="Option Menu" type="Node2D" unique_id=965566193]
+script = ExtResource("1_cq70r")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=129466431]
+scale = Vector2(0.99999994, 0.99999994)
+transform = Transform2D(0.99999994, 0, 0, 0.99999994, 0, 0)
+
+[node name="Title" type="Label" parent="CanvasLayer" unique_id=924677044]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -200.0
+offset_right = 232.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "DYNAMITE BOI"
+label_settings = SubResource("LabelSettings_lfi5k")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="CanvasLayer" unique_id=448366569]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -100.0
+offset_right = 175.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Back" unique_id=310920376]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jlp4j")
+
+[node name="Label" type="Label" parent="CanvasLayer/Back" unique_id=1339125511]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"
+label_settings = SubResource("LabelSettings_bdn42")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Transition" type="ColorRect" parent="CanvasLayer" unique_id=881872090]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(6.545782e-06, 0.5631085, 0.71484035, 1)
+
+[connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]

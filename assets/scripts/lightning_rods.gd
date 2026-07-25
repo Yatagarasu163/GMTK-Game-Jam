@@ -19,6 +19,10 @@ func _process(_delta: float) -> void:
 		Go_Check()
 
 func Go_Check():
+	#clearing all previous bolts
+	for bolt in lightning_bolts:
+		bolt.queue_free()
+	lightning_bolts.clear()
 	#checking horizontal tiles
 	keep_going = true
 	CheckHit.position = Vector2.ZERO
@@ -47,6 +51,7 @@ func spawnLightning():
 	print(CheckHit.position)
 	var current_lightning:Node2D = lightning.instantiate()
 	current_lightning.position = CheckHit.position
+	lightning_bolts.append(current_lightning)
 	add_child(current_lightning)
 
 #is_in_group("WALL")
