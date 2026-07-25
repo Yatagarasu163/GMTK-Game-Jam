@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://cm2o83fg2iboh"]
+
+[ext_resource type="Script" uid="uid://ctk0r5nikli70" path="res://assets/scripts/main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://otmod6nckeaw" path="res://icon.svg" id="2_fu7sn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_op1xx"]
+font_size = 32
+
+[node name="Main Menu" type="Node2D" unique_id=142694051 node_paths=PackedStringArray("buttons")]
+script = ExtResource("1_7vrkn")
+buttons = [NodePath("CanvasLayer/Button"), NodePath("CanvasLayer/Button2")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=899947347]
+offset = Vector2(0, 500)
+rotation = -0.43633232
+transform = Transform2D(0.90630776, -0.42261827, 0.42261827, 0.90630776, 0, 500)
+
+[node name="Title" type="Label" parent="CanvasLayer" unique_id=852015172]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=750115428]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -32.0
+offset_right = 192.0
+offset_bottom = 32.0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Button" unique_id=447326387]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fu7sn")
+
+[node name="Label" type="Label" parent="CanvasLayer/Button" unique_id=1095515666]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+label_settings = SubResource("LabelSettings_op1xx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="CanvasLayer" unique_id=384818424]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 110.0
+offset_right = 192.0
+offset_bottom = 174.0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Button2" unique_id=1062047068]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fu7sn")
+
+[node name="Label" type="Label" parent="CanvasLayer/Button2" unique_id=922009960]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+label_settings = SubResource("LabelSettings_op1xx")
+horizontal_alignment = 1
+vertical_alignment = 1
