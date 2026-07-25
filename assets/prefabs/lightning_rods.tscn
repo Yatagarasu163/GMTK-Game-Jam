@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bewflk50lm0s" path="res://assets/scripts/lightning_rods.gd" id="1_73dhi"]
 [ext_resource type="Texture2D" uid="uid://otmod6nckeaw" path="res://icon.svg" id="1_u31yo"]
+[ext_resource type="PackedScene" uid="uid://dw4lxnn8auf2i" path="res://assets/prefabs/lightning_strike.tscn" id="2_8nm43"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jqmmp"]
 animations = [{
@@ -25,6 +26,7 @@ size = Vector2(1855, 20)
 
 [node name="Lightning Rods" type="Node2D" unique_id=1430730632 groups=["ROD"]]
 script = ExtResource("1_73dhi")
+lightning = ExtResource("2_8nm43")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=875466999]
 sprite_frames = SubResource("SpriteFrames_jqmmp")

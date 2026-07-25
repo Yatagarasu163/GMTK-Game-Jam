@@ -73,15 +73,18 @@ func resolve_lightning() -> void:
 	
 	for item in right_array:
 		if item.is_in_group("ROD"):
-			target_position_right = tilemap.local_to_map(item.global_position);
-			print(target_position_right)
+			target_position_right = tilemap.local_to_map(tilemap.to_local(item.global_position));
+			print("Target position: ", target_position_right)
 			break;
 	
-	var current_x_pos: int = tilemap.local_to_map(global_position).x + 1;
+	var current_x_pos: int = tilemap.local_to_map(tilemap.to_local(global_position)).x + 1;
+	
+	
 	while current_x_pos < target_position_right.x: 
-		var eh = lightning.instantiate();
-		eh.global_position = tilemap.map_to_local(Vector2i(current_x_pos, tilemap.local_to_map(global_position).y));
-		print(eh.global_position);
+		var eh:Node2D = lightning.instantiate();
+		get_parent().add_child(eh); 
+		eh.global_position = tilemap.map_to_local(tilemap.to_global(Vector2i(current_x_pos, tilemap.local_to_map(position).y)));
+		
 		print(tilemap.local_to_map(eh.global_position));
 		current_x_pos += 1;
 	

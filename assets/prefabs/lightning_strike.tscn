@@ -2,15 +2,50 @@
 
 [ext_resource type="Texture2D" uid="uid://o0qcxxmxjap4" path="res://assets/sprites/P1_Side_Walk.png" id="1_ok6lk"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ok6lk"]
+atlas = ExtResource("1_ok6lk")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ar2a"]
+atlas = ExtResource("1_ok6lk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccvhk"]
+atlas = ExtResource("1_ok6lk")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ua7lh"]
 atlas = ExtResource("1_ok6lk")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_jqmmp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_egl3b"]
+atlas = ExtResource("1_ok6lk")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dm8bc"]
+atlas = ExtResource("1_ok6lk")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ioeof"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ok6lk")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_0ar2a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccvhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ua7lh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egl3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dm8bc")
 }],
 "loop": 1,
 "name": &"default",
@@ -20,5 +55,5 @@ animations = [{
 [node name="LightningStrike" type="Node2D" unique_id=501207273]
 z_index = 2
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=280117440]
-sprite_frames = SubResource("SpriteFrames_jqmmp")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1284342462]
+sprite_frames = SubResource("SpriteFrames_ioeof")
