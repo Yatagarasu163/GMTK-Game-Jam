@@ -19,10 +19,12 @@ animations = [{
 size = Vector2(120, 120)
 
 [node name="Lightning Rods" type="Node2D" unique_id=1430730632 groups=["ROD"]]
+z_index = 1
 script = ExtResource("1_73dhi")
 lightning = ExtResource("2_8nm43")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=875466999]
+z_index = 5
 sprite_frames = SubResource("SpriteFrames_jqmmp")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=358568136 groups=["ROD"]]
