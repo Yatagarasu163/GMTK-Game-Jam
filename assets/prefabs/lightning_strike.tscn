@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dw4lxnn8auf2i"]
+
+[ext_resource type="Texture2D" uid="uid://o0qcxxmxjap4" path="res://assets/sprites/P1_Side_Walk.png" id="1_ok6lk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ar2a"]
+atlas = ExtResource("1_ok6lk")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jqmmp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ar2a")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LightningStrike" type="Node2D" unique_id=501207273]
+z_index = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=280117440]
+sprite_frames = SubResource("SpriteFrames_jqmmp")

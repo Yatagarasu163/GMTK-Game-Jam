@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://7gwr8k3w8co1"]
+
+[ext_resource type="Script" uid="uid://bewflk50lm0s" path="res://assets/scripts/lightning_rods.gd" id="1_73dhi"]
+[ext_resource type="Texture2D" uid="uid://otmod6nckeaw" path="res://icon.svg" id="1_u31yo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jqmmp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_u31yo")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqmmp"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ioeof"]
+size = Vector2(1855, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73dhi"]
+size = Vector2(1855, 20)
+
+[node name="Lightning Rods" type="Node2D" unique_id=1430730632 groups=["ROD"]]
+script = ExtResource("1_73dhi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=875466999]
+sprite_frames = SubResource("SpriteFrames_jqmmp")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=358568136]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=361764985]
+shape = SubResource("RectangleShape2D_jqmmp")
+
+[node name="Right" type="Area2D" parent="." unique_id=501069268]
+position = Vector2(74, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right" unique_id=1949941546]
+position = Vector2(917.5, 0)
+shape = SubResource("RectangleShape2D_ioeof")
+
+[node name="Up" type="Area2D" parent="." unique_id=344194649]
+position = Vector2(0, -74)
+rotation = -1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Up" unique_id=2059151424]
+position = Vector2(917.5, 0)
+shape = SubResource("RectangleShape2D_ioeof")
+
+[node name="Down" type="Area2D" parent="." unique_id=930169539]
+position = Vector2(0, 74)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Down" unique_id=1997076006]
+position = Vector2(917.5, 0)
+shape = SubResource("RectangleShape2D_ioeof")
+
+[node name="Left" type="Area2D" parent="." unique_id=1006104507]
+position = Vector2(-74, 0)
+rotation = -3.1415927
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left" unique_id=27448087]
+position = Vector2(917.5, 0)
+shape = SubResource("RectangleShape2D_73dhi")
+
+[connection signal="area_entered" from="Right" to="." method="_on_right_area_entered"]
+[connection signal="area_entered" from="Up" to="." method="_on_up_area_entered"]
+[connection signal="area_entered" from="Down" to="." method="_on_down_area_entered"]
+[connection signal="area_entered" from="Left" to="." method="_on_left_area_entered"]
