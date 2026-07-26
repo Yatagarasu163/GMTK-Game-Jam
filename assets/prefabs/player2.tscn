@@ -2,9 +2,106 @@
 
 [ext_resource type="Script" uid="uid://bh0dnyeg81on6" path="res://assets/scripts/player2.gd" id="1_rihsh"]
 [ext_resource type="PackedScene" uid="uid://7gwr8k3w8co1" path="res://assets/prefabs/lightning_rods.tscn" id="2_h6k68"]
+[ext_resource type="Texture2D" uid="uid://jiyhx2cxpa42" path="res://assets/sprites/Player 1 and 2/P2_Front_Idle.png" id="3_pd6rn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oeq8l"]
 size = Vector2(130, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn5mw"]
+atlas = ExtResource("3_pd6rn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4idbu"]
+atlas = ExtResource("3_pd6rn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4t5a"]
+atlas = ExtResource("3_pd6rn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56lx4"]
+atlas = ExtResource("3_pd6rn")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26cgk"]
+atlas = ExtResource("3_pd6rn")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwpkx"]
+atlas = ExtResource("3_pd6rn")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0t8h"]
+atlas = ExtResource("3_pd6rn")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1culj"]
+atlas = ExtResource("3_pd6rn")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxjva"]
+atlas = ExtResource("3_pd6rn")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_op1xx"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"Idle_Back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn5mw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4idbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4t5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56lx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26cgk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwpkx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0t8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1culj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxjva")
+}],
+"loop": 1,
+"name": &"Idle_Front",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"Idle_Side",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"Walk_Back",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"Walk_Front",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"Walk_Side",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ql73s"]
 size = Vector2(128, 127)
@@ -18,7 +115,10 @@ Spawn_object = ExtResource("2_h6k68")
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_oeq8l")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1411394094]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=453674343]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_op1xx")
+animation = &"Idle_Front"
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1264230522]
 

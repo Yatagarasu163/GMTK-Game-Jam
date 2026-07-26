@@ -2,8 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://72mbb1ea6wht" path="res://assets/prefabs/player1.tscn" id="1_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://ylnlr7c4cgtq" path="res://assets/prefabs/player2.tscn" id="2_hqtel"]
-[ext_resource type="Texture2D" path="res://icon.svg" id="2_onrkg"]
-[ext_resource type="PackedScene" uid="uid://0egwdaaq2slt" path="res://assets/prefabs/rod.tscn" id="4_hqtel"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ql73s"]
 
@@ -29,7 +27,3 @@ shape = SubResource("RectangleShape2D_v0s4m")
 [node name="Sprite2D" type="Sprite2D" parent="wall" unique_id=230409290]
 position = Vector2(0, -1)
 scale = Vector2(2.5078127, 1.0703125)
-texture = ExtResource("2_onrkg")
-
-[node name="Rod" parent="." unique_id=381893686 instance=ExtResource("4_hqtel")]
-position = Vector2(1063, 792)

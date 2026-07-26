@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bi86eipf56r88" path="res://assets/sprites/Tiles/lab_partition.png" id="4_5rr72"]
 [ext_resource type="Texture2D" uid="uid://cpqtttr8dfjop" path="res://assets/sprites/Tiles/lab_partition3.png" id="5_gyffv"]
 [ext_resource type="Texture2D" uid="uid://dql40ium4d5i3" path="res://assets/sprites/Tiles/lab_partition4.png" id="6_1pe0h"]
+[ext_resource type="PackedScene" uid="uid://72mbb1ea6wht" path="res://assets/prefabs/player1.tscn" id="10_eajg8"]
+[ext_resource type="PackedScene" uid="uid://ylnlr7c4cgtq" path="res://assets/prefabs/player2.tscn" id="11_1xul6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hn12h"]
 texture = ExtResource("1_hbghi")
@@ -180,3 +182,10 @@ physics_quadrant_size = 32
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1750559774]
 position = Vector2(960, 490)
 zoom = Vector2(0.82, 0.82)
+
+[node name="Player 1" parent="." unique_id=1696317949 instance=ExtResource("10_eajg8")]
+scale = Vector2(0.45, 0.45)
+
+[node name="Player 2" parent="." unique_id=1447229213 instance=ExtResource("11_1xul6")]
+position = Vector2(416, 290)
+scale = Vector2(0.45, 0.45)
