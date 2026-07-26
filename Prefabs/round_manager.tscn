@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b4mt5v5jektgy"]
+
+[ext_resource type="Script" uid="uid://c40rt4qobjsdl" path="res://assets/Scripts/Round Handler/round_manager.gd" id="1_64b6y"]
+
+[node name="Round Manager" type="Node2D" unique_id=1680496311]
+script = ExtResource("1_64b6y")
+auto_start_for_testing = true
+
+[node name="RoundTimer" type="Timer" parent="." unique_id=1427458426]
+
+[node name="NextRoundDelay" type="Timer" parent="." unique_id=1197520364]

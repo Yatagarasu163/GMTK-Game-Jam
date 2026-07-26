@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cut33rjbus1nb"]
+
+[ext_resource type="Script" uid="uid://dptys7r4pgxrm" path="res://assets/Scripts/Round Handler/Game_state_checker.gd" id="1_bfv5e"]
+
+[node name="Gamestatechecker" type="Node2D" unique_id=985095345]
+script = ExtResource("1_bfv5e")
