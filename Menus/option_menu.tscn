@@ -4,15 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://dv7tfhp0tvo5x" path="res://assets/sprites/User Interface/Button.tres" id="2_s7ibr"]
 [ext_resource type="Texture2D" uid="uid://djc5jo2s1y4bn" path="res://assets/sprites/Game Over Background.png" id="3_jlp4j"]
 [ext_resource type="PackedScene" uid="uid://cfjx3ggp3oc8w" path="res://assets/prefabs/background.tscn" id="4_beevl"]
+[ext_resource type="LabelSettings" uid="uid://bghltt0s8cmrp" path="res://assets/Fonts/Button_Label_Setting.tres" id="4_qcc2s"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lfi5k"]
 font_size = 65
-
-[sub_resource type="LabelSettings" id="LabelSettings_beevl"]
-font_size = 32
-
-[sub_resource type="LabelSettings" id="LabelSettings_bdn42"]
-font_size = 32
 
 [node name="Option Menu" type="Node2D" unique_id=965566193 node_paths=PackedStringArray("items", "master_slider", "bgm_slider", "sfx_slider", "master_value_label", "bgm_value_label", "sfx_value_label")]
 script = ExtResource("1_cq70r")
@@ -79,14 +74,14 @@ vertical = true
 [node name="MasterLabel" type="Label" parent="CanvasLayer/Settings/VolumeSettings" unique_id=593203274]
 layout_mode = 2
 text = "Master Volume"
-label_settings = SubResource("LabelSettings_beevl")
+label_settings = ExtResource("4_qcc2s")
 
 [node name="MasterValueLabel" type="Label" parent="CanvasLayer/Settings/VolumeSettings/MasterLabel" unique_id=1054683936]
 layout_mode = 0
 offset_right = 424.0
 offset_bottom = 45.0
 text = "100"
-label_settings = SubResource("LabelSettings_beevl")
+label_settings = ExtResource("4_qcc2s")
 horizontal_alignment = 2
 
 [node name="MasterSlider" type="HSlider" parent="CanvasLayer/Settings/VolumeSettings" unique_id=1868589759]
@@ -96,14 +91,14 @@ value = 100.0
 [node name="BGMLabel" type="Label" parent="CanvasLayer/Settings/VolumeSettings" unique_id=1278274805]
 layout_mode = 2
 text = "Background Music"
-label_settings = SubResource("LabelSettings_beevl")
+label_settings = ExtResource("4_qcc2s")
 
 [node name="BGMValueLabel" type="Label" parent="CanvasLayer/Settings/VolumeSettings/BGMLabel" unique_id=388478353]
 layout_mode = 0
 offset_right = 424.0
 offset_bottom = 45.0
 text = "100"
-label_settings = SubResource("LabelSettings_beevl")
+label_settings = ExtResource("4_qcc2s")
 horizontal_alignment = 2
 
 [node name="BGMSlider" type="HSlider" parent="CanvasLayer/Settings/VolumeSettings" unique_id=704299566]
@@ -113,14 +108,14 @@ value = 100.0
 [node name="SFXLabel" type="Label" parent="CanvasLayer/Settings/VolumeSettings" unique_id=1609144074]
 layout_mode = 2
 text = "Sound Effects"
-label_settings = SubResource("LabelSettings_beevl")
+label_settings = ExtResource("4_qcc2s")
 
 [node name="SFXValueLabel" type="Label" parent="CanvasLayer/Settings/VolumeSettings/SFXLabel" unique_id=1727119455]
 layout_mode = 0
 offset_right = 424.0
 offset_bottom = 45.0
 text = "100"
-label_settings = SubResource("LabelSettings_beevl")
+label_settings = ExtResource("4_qcc2s")
 horizontal_alignment = 2
 
 [node name="SFXSlider" type="HSlider" parent="CanvasLayer/Settings/VolumeSettings" unique_id=1730255442]
@@ -160,7 +155,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Back"
-label_settings = SubResource("LabelSettings_bdn42")
+label_settings = ExtResource("4_qcc2s")
 horizontal_alignment = 1
 vertical_alignment = 1
 

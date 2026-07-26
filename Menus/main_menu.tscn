@@ -2,19 +2,17 @@
 
 [ext_resource type="Script" uid="uid://ctk0r5nikli70" path="res://assets/scripts/main_menu.gd" id="1_7vrkn"]
 [ext_resource type="PackedScene" uid="uid://bpsgh502f7ys5" path="res://Level Scenes/level_1.tscn" id="2_vxn86"]
-[ext_resource type="AudioStream" uid="uid://b7ydvbm4fwd1k" path="res://universfield-whip-snap-242215.mp3" id="3_fu7sn"]
+[ext_resource type="AudioStream" uid="uid://b7ydvbm4fwd1k" path="res://assets/Audio/universfield-whip-snap-242215.mp3" id="3_fu7sn"]
 [ext_resource type="PackedScene" uid="uid://dxemsreci3o14" path="res://Menus/option_menu.tscn" id="3_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://dv7tfhp0tvo5x" path="res://assets/sprites/User Interface/Button.tres" id="4_vxn86"]
 [ext_resource type="FontFile" uid="uid://bxmnx83wx3n74" path="res://assets/Fonts/LowresPixel-Regular.otf" id="4_y501u"]
 [ext_resource type="Texture2D" uid="uid://djc5jo2s1y4bn" path="res://assets/sprites/Game Over Background.png" id="5_nlkkf"]
+[ext_resource type="LabelSettings" uid="uid://bghltt0s8cmrp" path="res://assets/Fonts/Button_Label_Setting.tres" id="7_y501u"]
 [ext_resource type="PackedScene" uid="uid://cfjx3ggp3oc8w" path="res://assets/prefabs/background.tscn" id="8_2k0p2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7vrkn"]
 font = ExtResource("4_y501u")
 font_size = 65
-
-[sub_resource type="LabelSettings" id="LabelSettings_op1xx"]
-font_size = 32
 
 [node name="Main Menu" type="Node2D" unique_id=142694051 node_paths=PackedStringArray("items")]
 script = ExtResource("1_7vrkn")
@@ -78,7 +76,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Start"
-label_settings = SubResource("LabelSettings_op1xx")
+label_settings = ExtResource("7_y501u")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -114,7 +112,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Options?"
-label_settings = SubResource("LabelSettings_op1xx")
+label_settings = ExtResource("7_y501u")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -151,7 +149,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Whip"
-label_settings = SubResource("LabelSettings_op1xx")
+label_settings = ExtResource("7_y501u")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -188,7 +186,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Quit"
-label_settings = SubResource("LabelSettings_op1xx")
+label_settings = ExtResource("7_y501u")
 horizontal_alignment = 1
 vertical_alignment = 1
 

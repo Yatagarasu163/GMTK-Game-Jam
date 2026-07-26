@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://bghltt0s8cmrp"]
+
+[ext_resource type="FontFile" uid="uid://bxmnx83wx3n74" path="res://assets/Fonts/LowresPixel-Regular.otf" id="1_m007g"]
+
+[resource]
+font = ExtResource("1_m007g")
+font_size = 32
