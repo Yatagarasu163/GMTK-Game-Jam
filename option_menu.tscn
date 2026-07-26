@@ -9,8 +9,9 @@ font_size = 65
 [sub_resource type="LabelSettings" id="LabelSettings_bdn42"]
 font_size = 32
 
-[node name="Option Menu" type="Node2D" unique_id=965566193]
+[node name="Option Menu" type="Node2D" unique_id=965566193 node_paths=PackedStringArray("items")]
 script = ExtResource("1_cq70r")
+items = [NodePath("CanvasLayer/Title"), NodePath("CanvasLayer/Back")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=129466431]
 scale = Vector2(0.99999994, 0.99999994)
@@ -28,7 +29,7 @@ offset_right = 232.0
 offset_bottom = -110.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "DYNAMITE BOI"
+text = "OPTIONS"
 label_settings = SubResource("LabelSettings_lfi5k")
 horizontal_alignment = 1
 vertical_alignment = 1
