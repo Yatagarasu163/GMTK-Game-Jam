@@ -235,6 +235,96 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_635d0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro7hf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ubvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wthn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_padix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_635d0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro7hf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ubvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wthn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_padix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_635d0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro7hf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ubvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wthn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_padix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_635d0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro7hf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ubvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wthn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_padix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_635d0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro7hf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ubvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wthn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_padix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_635d0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro7hf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ubvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wthn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_padix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_635d0")
 }],
 "loop": 0,
 "name": &"Hit",
@@ -390,7 +480,7 @@ shape = SubResource("RectangleShape2D_oeq8l")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=453674343]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_op1xx")
-animation = &"Die"
+animation = &"Hit"
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1264230522]
 target_position = Vector2(0, 64)

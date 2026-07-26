@@ -20,7 +20,7 @@ func _ready() -> void:
 		manager.lightning_triggered.connect(Go_Check);
 		manager.round_started.connect(_clear_rods);
 
-func _clear_rods(round_timer: int):
+func _clear_rods(_round_timer: int):
 	#clearing all previous bolts
 	for bolt in lightning_bolts:
 		bolt.queue_free()

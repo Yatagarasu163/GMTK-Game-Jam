@@ -6,3 +6,4 @@
 script = ExtResource("1_8827k")
 
 [node name="bgm" type="AudioStreamPlayer2D" parent="." unique_id=676773184]
+process_mode = 3
