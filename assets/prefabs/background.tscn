@@ -1,31 +1,48 @@
 [gd_scene format=3 uid="uid://cfjx3ggp3oc8w"]
 
-[ext_resource type="Texture2D" uid="uid://bji2x47u50piu" path="res://assets/sprites/Main Menu/main menu background.png" id="1_ygsh5"]
-[ext_resource type="Texture2D" uid="uid://cernfwcx4mp6y" path="res://assets/sprites/Main Menu/main menu player2.png" id="2_vxf1n"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y501u"]
-load_path = "res://.godot/imported/main menu player1.png-bb21a11ad30b3d993a30185c1eac97e5.ctex"
+[ext_resource type="Script" uid="uid://djanvincoyt4h" path="res://assets/scripts/background.gd" id="1_hk3qb"]
+[ext_resource type="Texture2D" uid="uid://bji2x47u50piu" path="res://assets/sprites/User Interface/Main Menu/main menu background.png" id="1_ygsh5"]
+[ext_resource type="Texture2D" uid="uid://cernfwcx4mp6y" path="res://assets/sprites/User Interface/Main Menu/main menu player2.png" id="2_vxf1n"]
+[ext_resource type="Texture2D" uid="uid://blntgcohkak7e" path="res://assets/sprites/User Interface/Main Menu/main menu player1.png" id="3_rrw0u"]
 
 [node name="Background" type="Control" unique_id=173534809]
 z_index = -1
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hk3qb")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1464350192]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(2.9952438, 2.9952438)
+[node name="Background" type="TextureRect" parent="." unique_id=1464350192]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_ygsh5")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=137209354]
-position = Vector2(403.00003, 569.00006)
-scale = Vector2(2.829012, 2.829012)
-texture = SubResource("CompressedTexture2D_y501u")
+[node name="Player1" type="TextureRect" parent="." unique_id=1609091242]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -1080.0
+offset_right = 855.0
+grow_vertical = 0
+texture = ExtResource("3_rrw0u")
 
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=24594442]
-position = Vector2(1575.0001, 566)
-scale = Vector2(2.829012, 2.829012)
+[node name="Player2" type="TextureRect" parent="." unique_id=150743202]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -726.0
+offset_top = -1080.0
+grow_horizontal = 0
+grow_vertical = 0
 texture = ExtResource("2_vxf1n")

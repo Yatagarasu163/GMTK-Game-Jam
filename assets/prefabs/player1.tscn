@@ -313,6 +313,81 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_peiu1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_neivk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3xo3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65hyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ap4du")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_peiu1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_neivk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3xo3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65hyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ap4du")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_peiu1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_neivk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3xo3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65hyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ap4du")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_peiu1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_neivk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3xo3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65hyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ap4du")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_peiu1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_neivk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3xo3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65hyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ap4du")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_peiu1")
 }],
 "loop": 0,
 "name": &"Hit",
@@ -529,4 +604,4 @@ shape = SubResource("RectangleShape2D_ql73s")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1436263469]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_op1xx")
-animation = &"Die"
+animation = &"Hit"
