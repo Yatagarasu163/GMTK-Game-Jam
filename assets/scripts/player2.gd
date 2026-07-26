@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 
 @onready var ray_cast = $RayCast2D
-@onready var sprite = $Sprite2D # Visual node
 @export var max_moves_left = 10
 var moves_left = max_moves_left;
 @export var max_rods_left = 2;
@@ -28,13 +27,13 @@ func _ready() -> void:
 		round_manager.round_ended.connect(_on_round_end);
 	
 
-func _on_round_start(round_count: int) -> void:
+func _on_round_start(_round_count: int) -> void:
 	moves_left = max_moves_left;
 	rods_left = max_rods_left;
 	moving = false;
 
 	
-func _on_round_end(round_count: int) -> void: 
+func _on_round_end(_round_count: int) -> void: 
 	moving = true;
 	moves_left = 0;
 	rods_left = 0;

@@ -31,11 +31,18 @@ signal game_continues
 @export var freeze_game_on_end: bool = true
 @export var show_debug_messages: bool = true
 
+@export var player_1_anim: AnimatedSprite2D; 
+@export var player_2_anim: AnimatedSprite2D; 
+
 
 var game_over: bool = false
 
 
 func _ready() -> void:
+	
+	player_1_anim.visible = false;
+	player_2_anim.visible = false;
+	
 	# Hide the menu when the match begins.
 	if game_over_menu != null:
 		game_over_menu.hide()
@@ -81,14 +88,20 @@ func check_game_state(
 
 	if player_1_dead and player_2_dead:
 		end_game("Draw!", 0)
+		player_1_anim.play("player_die");
+		player_2_anim.play("player_die");
 		return true
 
 	if player_1_dead:
 		end_game("Player 2 Wins!", 2)
+		player_1_anim.play("player_die");
+		player_2_anim.play("player_live");
 		return true
 
 	if player_2_dead:
 		end_game("Player 1 Wins!", 1)
+		player_1_anim.play("player_live");
+		player_2_anim.play("player_die");
 		return true
 
 	game_continues.emit()
@@ -104,7 +117,10 @@ func end_game(result_text: String, winner_player: int) -> void:
 		return
 
 	game_over = true
-
+	
+	player_1_anim.visible = true;
+	player_2_anim.visible = true;
+	
 	# Stop the countdown and prevent the next round from starting.
 	if round_manager != null and round_manager.has_method("end_match"):
 		round_manager.end_match()
