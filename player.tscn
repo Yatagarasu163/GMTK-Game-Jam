@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b7fi1u6munk3m"]
+
+[ext_resource type="PackedScene" uid="uid://72mbb1ea6wht" path="res://player1.tscn" id="1_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://ylnlr7c4cgtq" path="res://player2.tscn" id="2_hqtel"]
+[ext_resource type="Texture2D" uid="uid://otmod6nckeaw" path="res://icon.svg" id="2_onrkg"]
+[ext_resource type="PackedScene" uid="uid://0egwdaaq2slt" path="res://rod.tscn" id="4_hqtel"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ql73s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0s4m"]
+size = Vector2(320, 137)
+
+[node name="Test" type="Node2D" unique_id=660766102]
+
+[node name="Player 1" parent="." unique_id=1696317949 instance=ExtResource("1_i3pqv")]
+position = Vector2(469, 899)
+
+[node name="Player 2" parent="." unique_id=448489117 instance=ExtResource("2_hqtel")]
+position = Vector2(720, 909)
+
+[node name="wall" type="StaticBody2D" parent="." unique_id=540723053]
+position = Vector2(1162, 930)
+physics_material_override = SubResource("PhysicsMaterial_ql73s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall" unique_id=298615651]
+process_mode = 3
+shape = SubResource("RectangleShape2D_v0s4m")
+
+[node name="Sprite2D" type="Sprite2D" parent="wall" unique_id=230409290]
+position = Vector2(0, -1)
+scale = Vector2(2.5078127, 1.0703125)
+texture = ExtResource("2_onrkg")
+
+[node name="Rod" parent="." unique_id=381893686 instance=ExtResource("4_hqtel")]
+position = Vector2(1063, 792)
