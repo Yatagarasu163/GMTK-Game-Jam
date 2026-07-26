@@ -14,12 +14,15 @@
 [ext_resource type="Texture2D" uid="uid://c3nunmnsvjbeh" path="res://assets/sprites/Player 1 and 2/P1_Death.png" id="5_l1eus"]
 [ext_resource type="Texture2D" uid="uid://cfgpeqa45yq5d" path="res://assets/sprites/Player 1 and 2/P2_Death.png" id="5_mnyab"]
 [ext_resource type="Texture2D" uid="uid://dql40ium4d5i3" path="res://assets/sprites/Tiles/lab_partition4.png" id="6_1pe0h"]
+[ext_resource type="Script" uid="uid://dkirl6goey5nd" path="res://Level Scenes/game_over.gd" id="6_5a7vs"]
 [ext_resource type="Texture2D" uid="uid://jiyhx2cxpa42" path="res://assets/sprites/Player 1 and 2/P2_Front_Idle.png" id="6_ga5xt"]
 [ext_resource type="Texture2D" uid="uid://dxffwpyigcgyr" path="res://assets/sprites/Player 1 and 2/P1_Front_Idle.png" id="6_mcx5e"]
 [ext_resource type="Texture2D" uid="uid://bji2x47u50piu" path="res://assets/sprites/User Interface/Main Menu/main menu background.png" id="9_mcx5e"]
 [ext_resource type="PackedScene" uid="uid://72mbb1ea6wht" path="res://assets/prefabs/player1.tscn" id="10_eajg8"]
 [ext_resource type="PackedScene" uid="uid://ylnlr7c4cgtq" path="res://assets/prefabs/player2.tscn" id="11_1xul6"]
+[ext_resource type="Texture2D" uid="uid://dv7tfhp0tvo5x" path="res://assets/sprites/User Interface/Button.tres" id="11_054b7"]
 [ext_resource type="PackedScene" uid="uid://cut33rjbus1nb" path="res://Prefabs/gamestatechecker.tscn" id="12_kvn3m"]
+[ext_resource type="LabelSettings" uid="uid://bghltt0s8cmrp" path="res://assets/Fonts/Button_Label_Setting.tres" id="12_xvxfc"]
 [ext_resource type="PackedScene" uid="uid://b4mt5v5jektgy" path="res://Prefabs/round_manager.tscn" id="13_nu8qx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ql73s"]
@@ -581,14 +584,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GameOver" type="TextureRect" parent="CanvasLayer" unique_id=1905662332]
-visible = false
+[node name="GameOver" type="TextureRect" parent="CanvasLayer" unique_id=1905662332 node_paths=PackedStringArray("items", "transition_block")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_5rr72")
+script = ExtResource("6_5a7vs")
+items = [NodePath("Label"), NodePath("Restart"), NodePath("Main Menu")]
+transition_block = NodePath("../Transition")
 
 [node name="Label" type="Label" parent="CanvasLayer/GameOver" unique_id=866050409]
 layout_mode = 1
@@ -616,6 +621,82 @@ position = Vector2(1500, 600)
 scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_kmatr")
 animation = &"player_die"
+
+[node name="Restart" type="Button" parent="CanvasLayer/GameOver" unique_id=253451679]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -32.0
+offset_right = 175.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameOver/Restart" unique_id=1739794622]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_right = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_054b7")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/GameOver/Restart" unique_id=2065079535]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Restart"
+label_settings = ExtResource("12_xvxfc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Main Menu" type="Button" parent="CanvasLayer/GameOver" unique_id=1287122408]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = 110.0
+offset_right = 175.0
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameOver/Main Menu" unique_id=1631127274]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_right = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_054b7")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/GameOver/Main Menu" unique_id=2000457379]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Main Menu"
+label_settings = ExtResource("12_xvxfc")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Transition" type="ColorRect" parent="CanvasLayer" unique_id=1677805608]
 visible = false
@@ -675,6 +756,7 @@ player_1_anim = NodePath("../../CanvasLayer/GameOver/Player1")
 player_2_anim = NodePath("../../CanvasLayer/GameOver/Player2")
 
 [node name="Round Manager" parent="Environment" unique_id=1301805579 instance=ExtResource("13_nu8qx")]
+round_duration = 0.1
 next_round_delay = 3.0
 
 [node name="Environment#Camera2D" type="Camera2D" parent="Environment" unique_id=1750559774]
@@ -703,3 +785,6 @@ heart_display = NodePath("../CanvasLayer/Panel/Player 1")
 position = Vector2(416, 288)
 scale = Vector2(0.45, 0.45)
 heart_display = NodePath("../CanvasLayer/Panel/Player 2")
+
+[connection signal="pressed" from="CanvasLayer/GameOver/Restart" to="CanvasLayer/GameOver" method="_on_restart_pressed"]
+[connection signal="pressed" from="CanvasLayer/GameOver/Main Menu" to="CanvasLayer/GameOver" method="_on_main_menu_pressed"]
