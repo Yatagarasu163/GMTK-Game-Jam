@@ -19,6 +19,8 @@ items = [NodePath("CanvasLayer/Title"), NodePath("CanvasLayer/Back")]
 scale = Vector2(0.99999994, 0.99999994)
 transform = Transform2D(0.99999994, 0, 0, 0.99999994, 0, 0)
 
+[node name="Background" parent="CanvasLayer" unique_id=173534809 instance=ExtResource("4_beevl")]
+
 [node name="Title" type="Label" parent="CanvasLayer" unique_id=924677044]
 anchors_preset = 8
 anchor_left = 0.5
@@ -74,7 +76,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Transition" type="ColorRect" parent="CanvasLayer" unique_id=881872090]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -91,7 +92,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_jlp4j")
-
-[node name="Background" parent="." unique_id=173534809 instance=ExtResource("4_beevl")]
 
 [connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]

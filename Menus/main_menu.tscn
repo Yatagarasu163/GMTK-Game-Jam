@@ -26,6 +26,8 @@ items = [NodePath("CanvasLayer/Title"), NodePath("CanvasLayer/Start"), NodePath(
 scale = Vector2(0.99999994, 0.99999994)
 transform = Transform2D(0.99999994, 0, 0, 0.99999994, 0, 0)
 
+[node name="Background" parent="CanvasLayer" unique_id=173534809 instance=ExtResource("8_2k0p2")]
+
 [node name="Title" type="Label" parent="CanvasLayer" unique_id=852015172]
 anchors_preset = 8
 anchor_left = 0.5
@@ -191,7 +193,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Transition" type="ColorRect" parent="CanvasLayer" unique_id=1694912406]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -212,8 +213,6 @@ texture = ExtResource("5_nlkkf")
 [node name="WhipAudioPlayer" type="AudioStreamPlayer" parent="." unique_id=1324814696]
 stream = ExtResource("3_fu7sn")
 volume_db = 24.0
-
-[node name="Background" parent="." unique_id=173534809 instance=ExtResource("8_2k0p2")]
 
 [connection signal="mouse_entered" from="CanvasLayer/Start" to="." method="_on_start_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Start" to="." method="_on_start_mouse_exited"]

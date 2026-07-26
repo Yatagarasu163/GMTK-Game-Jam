@@ -14,11 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://dql40ium4d5i3" path="res://assets/sprites/Tiles/lab_partition4.png" id="6_1pe0h"]
 [ext_resource type="Texture2D" uid="uid://cfgpeqa45yq5d" path="res://assets/sprites/Player 1 and 2/P2_Death.png" id="6_md4w0"]
 [ext_resource type="Texture2D" uid="uid://jiyhx2cxpa42" path="res://assets/sprites/Player 1 and 2/P2_Front_Idle.png" id="7_l1eus"]
+[ext_resource type="Texture2D" uid="uid://bji2x47u50piu" path="res://assets/sprites/Main Menu/main menu background.png" id="8_l1eus"]
 [ext_resource type="PackedScene" uid="uid://72mbb1ea6wht" path="res://assets/prefabs/player1.tscn" id="10_eajg8"]
 [ext_resource type="PackedScene" uid="uid://ylnlr7c4cgtq" path="res://assets/prefabs/player2.tscn" id="11_1xul6"]
 [ext_resource type="PackedScene" uid="uid://cut33rjbus1nb" path="res://Prefabs/gamestatechecker.tscn" id="12_kvn3m"]
 [ext_resource type="PackedScene" uid="uid://b4mt5v5jektgy" path="res://Prefabs/round_manager.tscn" id="13_nu8qx"]
-[ext_resource type="PackedScene" uid="uid://cfjx3ggp3oc8w" path="res://assets/prefabs/background.tscn" id="19_l1eus"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jqmmp"]
 font = ExtResource("3_nu8qx")
@@ -373,13 +373,11 @@ sources/5 = SubResource("TileSetAtlasSource_ubhxj")
 [node name="Level 1" type="Node2D" unique_id=512610027]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1795483723]
-visible = false
 scale = Vector2(0.99999994, 0.99999994)
 transform = Transform2D(0.99999994, 0, 0, 0.99999994, 0, 0)
 script = ExtResource("1_bjebc")
 
 [node name="Transition" type="ColorRect" parent="CanvasLayer" unique_id=1677805608]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -397,13 +395,13 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_5rr72")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1905662332]
+[node name="Gameover" type="TextureRect" parent="CanvasLayer" unique_id=1905662332]
 offset_right = 2500.1497
 offset_bottom = 1341.0
 scale = Vector2(0.8076313, 0.8076313)
 texture = ExtResource("2_5rr72")
 
-[node name="Label" type="Label" parent="CanvasLayer/TextureRect" unique_id=866050409]
+[node name="Label" type="Label" parent="CanvasLayer/Gameover" unique_id=866050409]
 layout_mode = 0
 offset_left = 965.7873
 offset_top = 112.0
@@ -427,6 +425,12 @@ position = Vector2(1686.0002, 546.0001)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_mnyab")
 animation = &"player_live"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=371698313]
+z_index = -10
+position = Vector2(963, 490)
+scale = Vector2(3, 3)
+texture = ExtResource("8_l1eus")
 
 [node name="floor" type="TileMapLayer" parent="." unique_id=599379208]
 z_index = -2
@@ -463,7 +467,7 @@ rendering_quadrant_size = 32
 physics_quadrant_size = 32
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1750559774]
-position = Vector2(960, 490)
+position = Vector2(960, 500)
 
 [node name="Player 1" parent="." unique_id=1696317949 instance=ExtResource("10_eajg8")]
 position = Vector2(864, 608.00006)
@@ -478,18 +482,10 @@ player_1_health_source = NodePath("../Player 1")
 player_2_health_source = NodePath("../Player 2")
 health_property_name = &"lives_left"
 round_manager = NodePath("../Round Manager")
-game_over_menu = NodePath("../CanvasLayer/TextureRect")
-result_label = NodePath("../CanvasLayer/TextureRect/Label")
+game_over_menu = NodePath("../CanvasLayer/Gameover")
+result_label = NodePath("../CanvasLayer/Gameover/Label")
 player_1_anim = NodePath("../CanvasLayer/Player 1")
 player_2_anim = NodePath("../CanvasLayer/Player 2")
 
 [node name="Round Manager" parent="." unique_id=1680496311 instance=ExtResource("13_nu8qx")]
 next_round_delay = 3.0
-
-[node name="Background" parent="." unique_id=173534809 instance=ExtResource("19_l1eus")]
-z_index = -4
-offset_left = -83.0
-offset_top = -60.0
-offset_right = -43.0
-offset_bottom = -20.0
-scale = Vector2(1.0707368, 1.0707368)
