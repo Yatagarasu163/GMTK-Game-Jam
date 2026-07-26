@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crex4ijb574fv"
-path="res://.godot/imported/lab_wall_tile(solo).png-8b475e2cf04bd124ae222ce08d84e9ff.ctex"
+uid="uid://djc5jo2s1y4bn"
+path="res://.godot/imported/Game Over Background.png-fe622c0fd6f686f11c096e0bedc794de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/lab_wall_tile(solo).png"
-dest_files=["res://.godot/imported/lab_wall_tile(solo).png-8b475e2cf04bd124ae222ce08d84e9ff.ctex"]
+source_file="res://assets/sprites/Game Over Background.png"
+dest_files=["res://.godot/imported/Game Over Background.png-fe622c0fd6f686f11c096e0bedc794de.ctex"]
 
 [params]
 

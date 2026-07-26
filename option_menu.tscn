@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://uwl2smd8h03y" path="res://assets/scripts/option_menu.gd" id="1_cq70r"]
 [ext_resource type="Texture2D" uid="uid://otmod6nckeaw" path="res://icon.svg" id="2_jlp4j"]
+[ext_resource type="Texture2D" uid="uid://djc5jo2s1y4bn" path="res://assets/sprites/Game Over Background.png" id="3_jlp4j"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lfi5k"]
 font_size = 65
@@ -77,5 +78,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(6.545782e-06, 0.5631085, 0.71484035, 1)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Transition" unique_id=586171832]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_jlp4j")
 
 [connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]

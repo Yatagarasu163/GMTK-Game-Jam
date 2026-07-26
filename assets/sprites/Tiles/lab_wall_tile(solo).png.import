@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqnok1go8um8d"
-path="res://.godot/imported/lab_partition2.png-1d91b05e3f03f539ca6bf3125206a039.ctex"
+uid="uid://crex4ijb574fv"
+path="res://.godot/imported/lab_wall_tile(solo).png-01267fab9f73fcf3fc898d7abd1d4a69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/lab_partition2.png"
-dest_files=["res://.godot/imported/lab_partition2.png-1d91b05e3f03f539ca6bf3125206a039.ctex"]
+source_file="res://assets/sprites/Tiles/lab_wall_tile(solo).png"
+dest_files=["res://.godot/imported/lab_wall_tile(solo).png-01267fab9f73fcf3fc898d7abd1d4a69.ctex"]
 
 [params]
 
