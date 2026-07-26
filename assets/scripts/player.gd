@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+@export var heart_display: HeartDisplay
 @onready var ray_cast = $RayCast2D
 @export var max_moves_left = 10
 var moves_left = max_moves_left;
@@ -125,6 +125,7 @@ func is_hit() -> void:
 	is_hit_anim = true;
 	current_anim = "Hit";
 	anim.play(current_anim);
+	heart_display.Take_Heart(lives_left)
 	await anim.animation_finished;
 	is_hit_anim = false;
 	current_anim = "Idle_Front";

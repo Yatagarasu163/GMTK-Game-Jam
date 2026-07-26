@@ -5,22 +5,22 @@
 [ext_resource type="Texture2D" uid="uid://bg030ol58h32p" path="res://assets/sprites/Tiles/lab_floor_tile.png" id="1_hbghi"]
 [ext_resource type="Texture2D" uid="uid://djc5jo2s1y4bn" path="res://assets/sprites/Game Over Background.png" id="2_5rr72"]
 [ext_resource type="Texture2D" uid="uid://c4asjtfyiy8e3" path="res://assets/sprites/Tiles/lab_wall_tiles.png" id="2_ihfcg"]
+[ext_resource type="Script" uid="uid://w3lfp3n7h257" path="res://Level Scenes/heart_display.gd" id="3_18ict"]
 [ext_resource type="Texture2D" uid="uid://cqnok1go8um8d" path="res://assets/sprites/Tiles/lab_partition2.png" id="3_bjebc"]
 [ext_resource type="FontFile" uid="uid://bxmnx83wx3n74" path="res://assets/Fonts/LowresPixel-Regular.otf" id="3_nu8qx"]
 [ext_resource type="Texture2D" uid="uid://bi86eipf56r88" path="res://assets/sprites/Tiles/lab_partition.png" id="4_5rr72"]
 [ext_resource type="Texture2D" uid="uid://3fgx1q0jr68s" path="res://assets/sprites/User Interface/Health Asset.png" id="4_jtitw"]
 [ext_resource type="Texture2D" uid="uid://cpqtttr8dfjop" path="res://assets/sprites/Tiles/lab_partition3.png" id="5_gyffv"]
+[ext_resource type="Texture2D" uid="uid://c3nunmnsvjbeh" path="res://assets/sprites/Player 1 and 2/P1_Death.png" id="5_l1eus"]
+[ext_resource type="Texture2D" uid="uid://cfgpeqa45yq5d" path="res://assets/sprites/Player 1 and 2/P2_Death.png" id="5_mnyab"]
 [ext_resource type="Texture2D" uid="uid://dql40ium4d5i3" path="res://assets/sprites/Tiles/lab_partition4.png" id="6_1pe0h"]
+[ext_resource type="Texture2D" uid="uid://jiyhx2cxpa42" path="res://assets/sprites/Player 1 and 2/P2_Front_Idle.png" id="6_ga5xt"]
+[ext_resource type="Texture2D" uid="uid://dxffwpyigcgyr" path="res://assets/sprites/Player 1 and 2/P1_Front_Idle.png" id="6_mcx5e"]
+[ext_resource type="Texture2D" uid="uid://bji2x47u50piu" path="res://assets/sprites/User Interface/Main Menu/main menu background.png" id="9_mcx5e"]
 [ext_resource type="PackedScene" uid="uid://72mbb1ea6wht" path="res://assets/prefabs/player1.tscn" id="10_eajg8"]
 [ext_resource type="PackedScene" uid="uid://ylnlr7c4cgtq" path="res://assets/prefabs/player2.tscn" id="11_1xul6"]
 [ext_resource type="PackedScene" uid="uid://cut33rjbus1nb" path="res://Prefabs/gamestatechecker.tscn" id="12_kvn3m"]
 [ext_resource type="PackedScene" uid="uid://b4mt5v5jektgy" path="res://Prefabs/round_manager.tscn" id="13_nu8qx"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_jqmmp"]
-font = ExtResource("3_nu8qx")
-font_size = 128
-outline_size = 10
-outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ql73s"]
 font = ExtResource("3_nu8qx")
@@ -85,8 +85,250 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mloa2")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Lives",
+"speed": 15.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jqmmp"]
+font = ExtResource("3_nu8qx")
+font_size = 128
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_js7q1"]
+atlas = ExtResource("5_l1eus")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mryr5"]
+atlas = ExtResource("5_l1eus")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhx8n"]
+atlas = ExtResource("5_l1eus")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eql2s"]
+atlas = ExtResource("5_l1eus")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hk6sj"]
+atlas = ExtResource("5_l1eus")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdge4"]
+atlas = ExtResource("5_l1eus")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3blxo"]
+atlas = ExtResource("6_mcx5e")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwgqo"]
+atlas = ExtResource("6_mcx5e")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mqd1"]
+atlas = ExtResource("6_mcx5e")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcc5h"]
+atlas = ExtResource("6_mcx5e")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rko4s"]
+atlas = ExtResource("6_mcx5e")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82iej"]
+atlas = ExtResource("6_mcx5e")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gd375"]
+atlas = ExtResource("6_mcx5e")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf8ru"]
+atlas = ExtResource("6_mcx5e")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4n4ee"]
+atlas = ExtResource("6_mcx5e")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_op1xx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_js7q1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mryr5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhx8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eql2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hk6sj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdge4")
+}],
+"loop": 0,
+"name": &"player_die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3blxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwgqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mqd1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcc5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rko4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82iej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gd375")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mf8ru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4n4ee")
+}],
+"loop": 1,
+"name": &"player_live",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_054b7"]
+atlas = ExtResource("5_mnyab")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvxfc"]
+atlas = ExtResource("5_mnyab")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6adns"]
+atlas = ExtResource("5_mnyab")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vuy5i"]
+atlas = ExtResource("5_mnyab")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sf2j2"]
+atlas = ExtResource("5_mnyab")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_waie3"]
+atlas = ExtResource("5_mnyab")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0ksg"]
+atlas = ExtResource("6_ga5xt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45t5l"]
+atlas = ExtResource("6_ga5xt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xofy"]
+atlas = ExtResource("6_ga5xt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yt5mg"]
+atlas = ExtResource("6_ga5xt")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_powgr"]
+atlas = ExtResource("6_ga5xt")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dn5ps"]
+atlas = ExtResource("6_ga5xt")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4ppw"]
+atlas = ExtResource("6_ga5xt")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4fx0"]
+atlas = ExtResource("6_ga5xt")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nugw"]
+atlas = ExtResource("6_ga5xt")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kmatr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_054b7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvxfc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6adns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vuy5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sf2j2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_waie3")
+}],
+"loop": 0,
+"name": &"player_die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0ksg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45t5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xofy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yt5mg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_powgr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dn5ps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4ppw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4fx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nugw")
+}],
+"loop": 1,
+"name": &"player_live",
 "speed": 5.0
 }]
 
@@ -205,6 +447,176 @@ scale = Vector2(0.99999994, 0.99999994)
 transform = Transform2D(0.99999994, 0, 0, 0.99999994, 0, 0)
 script = ExtResource("1_bjebc")
 
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1593597407]
+self_modulate = Color(1, 1, 1, 0)
+offset_top = 25.0
+offset_right = 1919.0
+offset_bottom = 218.0
+
+[node name="Clock" type="Label" parent="CanvasLayer/Panel" unique_id=1118268301]
+layout_mode = 0
+offset_left = 736.00006
+offset_top = 74.00001
+offset_right = 1183.0
+offset_bottom = 196.0
+label_settings = SubResource("LabelSettings_ql73s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Panel/Clock" unique_id=1976171889]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Time Left" type="Label" parent="CanvasLayer/Panel" unique_id=1364092629]
+layout_mode = 0
+offset_left = 735.00006
+offset_top = 2.000001
+offset_right = 1182.0
+offset_bottom = 76.0
+text = "Time left"
+label_settings = SubResource("LabelSettings_ql73s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Panel/Time Left" unique_id=2013510064]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Player 1" type="Label" parent="CanvasLayer/Panel" unique_id=931738312 node_paths=PackedStringArray("heart_list")]
+layout_mode = 0
+offset_left = 160.00002
+offset_right = 606.9999
+offset_bottom = 74.0
+text = "Player 1"
+label_settings = SubResource("LabelSettings_ql73s")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_18ict")
+heart_list = [NodePath("P1L/P1H1"), NodePath("P1L/P1H2"), NodePath("P1L/P1H3")]
+
+[node name="P1L" type="Panel" parent="CanvasLayer/Panel/Player 1" unique_id=1173319896]
+light_mask = 0
+layout_mode = 0
+offset_left = 70.0
+offset_top = 80.0
+offset_right = 197.99998
+offset_bottom = 124.0
+scale = Vector2(2.5, 2.5)
+
+[node name="P1H1" type="AnimatedSprite2D" parent="CanvasLayer/Panel/Player 1/P1L" unique_id=1214105180]
+position = Vector2(21, 24)
+sprite_frames = SubResource("SpriteFrames_ql73s")
+animation = &"Lives"
+
+[node name="P1H2" type="AnimatedSprite2D" parent="CanvasLayer/Panel/Player 1/P1L" unique_id=1246232926]
+position = Vector2(63.00003, 24)
+sprite_frames = SubResource("SpriteFrames_ql73s")
+animation = &"Lives"
+
+[node name="P1H3" type="AnimatedSprite2D" parent="CanvasLayer/Panel/Player 1/P1L" unique_id=1407001716]
+position = Vector2(105.00006, 24)
+sprite_frames = SubResource("SpriteFrames_ql73s")
+animation = &"Lives"
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Panel/Player 1" unique_id=1856830375]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Player 2" type="Label" parent="CanvasLayer/Panel" unique_id=1027570262 node_paths=PackedStringArray("heart_list")]
+layout_mode = 0
+offset_left = 1312.0001
+offset_right = 1759.0
+offset_bottom = 74.0
+text = "Player 2"
+label_settings = SubResource("LabelSettings_ql73s")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_18ict")
+heart_list = [NodePath("P2L/P2H1"), NodePath("P2L/P2H2"), NodePath("P2L/P2H3")]
+
+[node name="P2L" type="Panel" parent="CanvasLayer/Panel/Player 2" unique_id=439003687]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 80.0
+offset_right = 198.0
+offset_bottom = 124.0
+scale = Vector2(2.5, 2.5)
+
+[node name="P2H1" type="AnimatedSprite2D" parent="CanvasLayer/Panel/Player 2/P2L" unique_id=438668903]
+position = Vector2(21, 24)
+sprite_frames = SubResource("SpriteFrames_ql73s")
+animation = &"Lives"
+
+[node name="P2H2" type="AnimatedSprite2D" parent="CanvasLayer/Panel/Player 2/P2L" unique_id=1702794990]
+position = Vector2(63.00003, 24)
+sprite_frames = SubResource("SpriteFrames_ql73s")
+animation = &"Lives"
+
+[node name="P2H3" type="AnimatedSprite2D" parent="CanvasLayer/Panel/Player 2/P2L" unique_id=1301777246]
+position = Vector2(105.00006, 24)
+sprite_frames = SubResource("SpriteFrames_ql73s")
+animation = &"Lives"
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Panel/Player 2" unique_id=60153120]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOver" type="TextureRect" parent="CanvasLayer" unique_id=1905662332]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5rr72")
+
+[node name="Label" type="Label" parent="CanvasLayer/GameOver" unique_id=866050409]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -318.5
+offset_top = 250.0
+offset_right = 318.5
+offset_bottom = 379.0
+grow_horizontal = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_jqmmp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player1" type="AnimatedSprite2D" parent="CanvasLayer/GameOver" unique_id=995829629]
+position = Vector2(400, 600)
+scale = Vector2(15, 15)
+sprite_frames = SubResource("SpriteFrames_op1xx")
+animation = &"player_die"
+
+[node name="Player2" type="AnimatedSprite2D" parent="CanvasLayer/GameOver" unique_id=661481732]
+position = Vector2(1500, 600)
+scale = Vector2(15, 15)
+sprite_frames = SubResource("SpriteFrames_kmatr")
+animation = &"player_die"
+
 [node name="Transition" type="ColorRect" parent="CanvasLayer" unique_id=1677805608]
 visible = false
 anchors_preset = 15
@@ -224,148 +636,49 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_5rr72")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1905662332]
-visible = false
-offset_right = 2500.1497
-offset_bottom = 1341.0
-scale = Vector2(0.8076313, 0.8076313)
-texture = ExtResource("2_5rr72")
+[node name="Environment" type="Node2D" parent="." unique_id=590070247]
 
-[node name="Label" type="Label" parent="CanvasLayer/TextureRect" unique_id=866050409]
-layout_mode = 0
-offset_left = 965.7873
-offset_top = 112.0
-offset_right = 1602.7874
-offset_bottom = 241.0
-text = "Game Over"
-label_settings = SubResource("LabelSettings_jqmmp")
+[node name="Background" type="Sprite2D" parent="Environment" unique_id=2078274751]
+z_index = -10
+position = Vector2(960, 500)
+scale = Vector2(3, 3)
+texture = ExtResource("9_mcx5e")
 
-[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1593597407]
-offset_right = 1919.0
-offset_bottom = 193.0
-
-[node name="Clock" type="Label" parent="CanvasLayer/Panel" unique_id=1118268301]
-layout_mode = 0
-offset_left = 736.00006
-offset_top = 74.00001
-offset_right = 1183.0
-offset_bottom = 196.0
-label_settings = SubResource("LabelSettings_ql73s")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Time Left" type="Label" parent="CanvasLayer/Panel" unique_id=1364092629]
-layout_mode = 0
-offset_left = 735.00006
-offset_top = 2.000001
-offset_right = 1182.0
-offset_bottom = 76.0
-text = "Time left"
-label_settings = SubResource("LabelSettings_ql73s")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Player 1" type="Label" parent="CanvasLayer/Panel" unique_id=931738312]
-layout_mode = 0
-offset_left = 160.00002
-offset_right = 606.9999
-offset_bottom = 74.0
-text = "Player 1"
-label_settings = SubResource("LabelSettings_ql73s")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Player 2" type="Label" parent="CanvasLayer/Panel" unique_id=1027570262]
-layout_mode = 0
-offset_left = 1312.0001
-offset_right = 1759.0
-offset_bottom = 74.0
-text = "Player 2"
-label_settings = SubResource("LabelSettings_ql73s")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="P1L" type="Panel" parent="CanvasLayer/Panel" unique_id=1173319896]
-light_mask = 0
-layout_mode = 0
-offset_left = 312.00006
-offset_top = 110.00001
-offset_right = 440.00006
-offset_bottom = 154.0
-
-[node name="P1H1" type="AnimatedSprite2D" parent="CanvasLayer/Panel/P1L" unique_id=1214105180]
-position = Vector2(21, 24)
-sprite_frames = SubResource("SpriteFrames_ql73s")
-animation = &"Lives"
-
-[node name="P1H2" type="AnimatedSprite2D" parent="CanvasLayer/Panel/P1L" unique_id=1246232926]
-position = Vector2(63.00003, 24)
-sprite_frames = SubResource("SpriteFrames_ql73s")
-animation = &"Lives"
-
-[node name="P1H3" type="AnimatedSprite2D" parent="CanvasLayer/Panel/P1L" unique_id=1407001716]
-position = Vector2(105.00006, 24)
-sprite_frames = SubResource("SpriteFrames_ql73s")
-animation = &"Lives"
-
-[node name="P2L" type="Panel" parent="CanvasLayer/Panel" unique_id=439003687]
-layout_mode = 0
-offset_left = 1482.0001
-offset_top = 109.00001
-offset_right = 1610.0001
-offset_bottom = 153.0
-
-[node name="P2H1" type="AnimatedSprite2D" parent="CanvasLayer/Panel/P2L" unique_id=438668903]
-position = Vector2(21, 24)
-sprite_frames = SubResource("SpriteFrames_ql73s")
-animation = &"Lives"
-
-[node name="P2H2" type="AnimatedSprite2D" parent="CanvasLayer/Panel/P2L" unique_id=1702794990]
-position = Vector2(63.00003, 24)
-sprite_frames = SubResource("SpriteFrames_ql73s")
-animation = &"Lives"
-
-[node name="P2H3" type="AnimatedSprite2D" parent="CanvasLayer/Panel/P2L" unique_id=1301777246]
-position = Vector2(105.00006, 24)
-sprite_frames = SubResource("SpriteFrames_ql73s")
-animation = &"Lives"
-
-[node name="floor" type="TileMapLayer" parent="Environment" unique_id=599379208]
+[node name="Environment#floor" type="TileMapLayer" parent="Environment" unique_id=599379208]
 z_index = -2
 tile_map_data = PackedByteArray("AAABAA4AAAAAAAAAAAABAA0AAAAAAAAAAAABAAwAAAAAAAAAAAABAAsAAAAAAAAAAAABAAoAAAAAAAAAAAABAAkAAAAAAAAAAAABAAcAAAAAAAAAAAABAAYAAAAAAAAAAAACAA4AAAAAAAAAAAADAA4AAAAAAAAAAAAEAA4AAAAAAAAAAAAFAA4AAAAAAAAAAAAGAA4AAAAAAAAAAAAHAA4AAAAAAAAAAAAIAA4AAAAAAAAAAAAJAA4AAAAAAAAAAAAKAA4AAAAAAAAAAAALAA4AAAAAAAAAAAAMAA4AAAAAAAAAAAANAA4AAAAAAAAAAAAOAA4AAAAAAAAAAAAPAA4AAAAAAAAAAAAQAA4AAAAAAAAAAAAcAA4AAAAAAAAAAAAbAA4AAAAAAAAAAAAaAA4AAAAAAAAAAAAZAA4AAAAAAAAAAAAYAA4AAAAAAAAAAAAXAA4AAAAAAAAAAAAWAA4AAAAAAAAAAAAVAA4AAAAAAAAAAAAUAA4AAAAAAAAAAAATAA4AAAAAAAAAAAASAA4AAAAAAAAAAAARAA4AAAAAAAAAAAARAA0AAAAAAAAAAAAcAAQAAAAAAAAAAAAcAAUAAAAAAAAAAAAcAAYAAAAAAAAAAAAcAAcAAAAAAAAAAAAcAAgAAAAAAAAAAAAcAAkAAAAAAAAAAAAcAAoAAAAAAAAAAAAcAAsAAAAAAAAAAAAcAAwAAAAAAAAAAAAcAA0AAAAAAAAAAAAbAA0AAAAAAAAAAAAaAA0AAAAAAAAAAAAZAA0AAAAAAAAAAAAYAA0AAAAAAAAAAAAXAA0AAAAAAAAAAAAWAA0AAAAAAAAAAAAVAA0AAAAAAAAAAAAUAA0AAAAAAAAAAAATAA0AAAAAAAAAAAASAA0AAAAAAAAAAAAQAA0AAAAAAAAAAAAPAA0AAAAAAAAAAAAOAA0AAAAAAAAAAAANAA0AAAAAAAAAAAAMAA0AAAAAAAAAAAALAA0AAAAAAAAAAAAKAA0AAAAAAAAAAAAJAA0AAAAAAAAAAAAIAA0AAAAAAAAAAAAHAA0AAAAAAAAAAAAGAA0AAAAAAAAAAAAFAA0AAAAAAAAAAAAEAA0AAAAAAAAAAAAEAAwAAAAAAAAAAAADAAwAAAAAAAAAAAACAAwAAAAAAAAAAAACAA0AAAAAAAAAAAADAA0AAAAAAAAAAAAEAAsAAAAAAAAAAAADAAsAAAAAAAAAAAADAAoAAAAAAAAAAAACAAoAAAAAAAAAAAAEAAoAAAAAAAAAAAAFAAgAAAAAAAAAAAAFAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAADAAcAAAAAAAAAAAADAAgAAAAAAAAAAAAFAAkAAAAAAAAAAAACAAcAAAAAAAAAAAACAAgAAAAAAAAAAAACAAsAAAAAAAAAAAAFAAYAAAAAAAAAAAACAAYAAAAAAAAAAAAFAAsAAAAAAAAAAAAFAAoAAAAAAAAAAAAGAAkAAAAAAAAAAAAGAAgAAAAAAAAAAAAGAAcAAAAAAAAAAAAGAAYAAAAAAAAAAAAFAAwAAAAAAAAAAAAGAAoAAAAAAAAAAAAGAAwAAAAAAAAAAAAHAAsAAAAAAAAAAAAHAAoAAAAAAAAAAAAIAAoAAAAAAAAAAAAIAAkAAAAAAAAAAAAIAAgAAAAAAAAAAAAIAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAHAAYAAAAAAAAAAAAHAAwAAAAAAAAAAAAIAAwAAAAAAAAAAAAIAAsAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAoAAAAAAAAAAAAJAAkAAAAAAAAAAAAJAAgAAAAAAAAAAAAJAAcAAAAAAAAAAAAJAAYAAAAAAAAAAAAGAAsAAAAAAAAAAAAHAAgAAAAAAAAAAAAHAAkAAAAAAAAAAAAJAAwAAAAAAAAAAAAKAAwAAAAAAAAAAAAKAAsAAAAAAAAAAAAJAAsAAAAAAAAAAAALAAwAAAAAAAAAAAAMAAwAAAAAAAAAAAANAAwAAAAAAAAAAAAOAAwAAAAAAAAAAAAPAAwAAAAAAAAAAAAPAAsAAAAAAAAAAAAOAAsAAAAAAAAAAAANAAsAAAAAAAAAAAAMAAsAAAAAAAAAAAALAAsAAAAAAAAAAAAQAAsAAAAAAAAAAAARAAsAAAAAAAAAAAASAAsAAAAAAAAAAAATAAwAAAAAAAAAAAAUAAwAAAAAAAAAAAAVAAwAAAAAAAAAAAASAAwAAAAAAAAAAAARAAwAAAAAAAAAAAAQAAwAAAAAAAAAAAAWAAwAAAAAAAAAAAAXAAwAAAAAAAAAAAAYAAwAAAAAAAAAAAAZAAwAAAAAAAAAAAAaAAwAAAAAAAAAAAAaAAsAAAAAAAAAAAAbAAsAAAAAAAAAAAAbAAwAAAAAAAAAAAAZAAsAAAAAAAAAAAAYAAsAAAAAAAAAAAAXAAsAAAAAAAAAAAAWAAsAAAAAAAAAAAAVAAsAAAAAAAAAAAAUAAsAAAAAAAAAAAATAAsAAAAAAAAAAAALAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAAKAAkAAAAAAAAAAAAKAAYAAAAAAAAAAAAMAAoAAAAAAAAAAAAMAAkAAAAAAAAAAAAMAAgAAAAAAAAAAAAMAAcAAAAAAAAAAAALAAcAAAAAAAAAAAALAAgAAAAAAAAAAAAKAAgAAAAAAAAAAAALAAkAAAAAAAAAAAALAAYAAAAAAAAAAAAKAAcAAAAAAAAAAAAMAAYAAAAAAAAAAAANAAkAAAAAAAAAAAANAAgAAAAAAAAAAAANAAcAAAAAAAAAAAAOAAUAAAAAAAAAAAANAAoAAAAAAAAAAAAOAAgAAAAAAAAAAAAOAAcAAAAAAAAAAAAOAAkAAAAAAAAAAAAPAAkAAAAAAAAAAAAPAAgAAAAAAAAAAAAQAAcAAAAAAAAAAAAQAAQAAAAAAAAAAAAPAAcAAAAAAAAAAAAPAAoAAAAAAAAAAAAQAAoAAAAAAAAAAAARAAoAAAAAAAAAAAARAAkAAAAAAAAAAAARAAgAAAAAAAAAAAASAAgAAAAAAAAAAAASAAcAAAAAAAAAAAASAAYAAAAAAAAAAAASAAUAAAAAAAAAAAARAAQAAAAAAAAAAAAQAAkAAAAAAAAAAAATAAcAAAAAAAAAAAATAAYAAAAAAAAAAAASAAoAAAAAAAAAAAASAAkAAAAAAAAAAAATAAgAAAAAAAAAAAAOAAoAAAAAAAAAAAARAAcAAAAAAAAAAAAQAAgAAAAAAAAAAAATAAoAAAAAAAAAAAAUAAoAAAAAAAAAAAAUAAkAAAAAAAAAAAAUAAgAAAAAAAAAAAAUAAcAAAAAAAAAAAATAAUAAAAAAAAAAAAUAAUAAAAAAAAAAAAUAAQAAAAAAAAAAAATAAQAAAAAAAAAAAASAAQAAAAAAAAAAAATAAkAAAAAAAAAAAAUAAYAAAAAAAAAAAAVAAkAAAAAAAAAAAAVAAgAAAAAAAAAAAAWAAcAAAAAAAAAAAAWAAYAAAAAAAAAAAAWAAUAAAAAAAAAAAAWAAQAAAAAAAAAAAAVAAQAAAAAAAAAAAAVAAoAAAAAAAAAAAAXAAoAAAAAAAAAAAAXAAkAAAAAAAAAAAAXAAgAAAAAAAAAAAAXAAcAAAAAAAAAAAAXAAYAAAAAAAAAAAAWAAoAAAAAAAAAAAAYAAkAAAAAAAAAAAAYAAgAAAAAAAAAAAAZAAgAAAAAAAAAAAAZAAcAAAAAAAAAAAAZAAYAAAAAAAAAAAAZAAUAAAAAAAAAAAAYAAQAAAAAAAAAAAAVAAUAAAAAAAAAAAAWAAkAAAAAAAAAAAAZAAkAAAAAAAAAAAAaAAcAAAAAAAAAAAAaAAYAAAAAAAAAAAAXAAQAAAAAAAAAAAAXAAUAAAAAAAAAAAAVAAYAAAAAAAAAAAAVAAcAAAAAAAAAAAAZAAoAAAAAAAAAAAAYAAYAAAAAAAAAAAAYAAUAAAAAAAAAAAAWAAgAAAAAAAAAAAAaAAoAAAAAAAAAAAAbAAoAAAAAAAAAAAAbAAkAAAAAAAAAAAAbAAgAAAAAAAAAAAAaAAkAAAAAAAAAAAAaAAgAAAAAAAAAAAAYAAcAAAAAAAAAAAAYAAoAAAAAAAAAAAAaAAQAAAAAAAAAAAAaAAUAAAAAAAAAAAAbAAQAAAAAAAAAAAAZAAQAAAAAAAAAAAAbAAYAAAAAAAAAAAAbAAcAAAAAAAAAAAAbAAUAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAADAAYAAAAAAAAAAAADAAUAAAAAAAAAAAACAAUAAAAAAAAAAAABAAgAAAAAAAAAAAACAAkAAAAAAAAAAAADAAkAAAAAAAAAAAAEAAkAAAAAAAAAAAAEAAgAAAAAAAAAAAAEAAYAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAJAAQAAAAAAAAAAAAKAAQAAAAAAAAAAAALAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAANAAQAAAAAAAAAAAAOAAQAAAAAAAAAAAAPAAQAAAAAAAAAAAAGAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAKAAUAAAAAAAAAAAALAAUAAAAAAAAAAAAMAAUAAAAAAAAAAAANAAUAAAAAAAAAAAAPAAUAAAAAAAAAAAAQAAUAAAAAAAAAAAANAAYAAAAAAAAAAAAOAAYAAAAAAAAAAAAPAAYAAAAAAAAAAAAQAAYAAAAAAAAAAAARAAUAAAAAAAAAAAARAAYAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_jqmmp")
 rendering_quadrant_size = 64
 physics_quadrant_size = 64
 
-[node name="walls" type="TileMapLayer" parent="Environment" unique_id=1760256429 groups=["WALL"]]
+[node name="Environment#walls" type="TileMapLayer" parent="Environment" unique_id=1760256429 groups=["WALL"]]
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAdAA8AAAACAAIAAAAAAA8AAAAAAAIAAAAdAAQAAAACAAEAAAAdAAUAAAACAAEAAAAdAAYAAAACAAEAAAAdAAcAAAACAAEAAAAdAAgAAAACAAEAAAAdAAkAAAACAAEAAAAdAAoAAAACAAEAAAAdAAsAAAACAAEAAAAdAAwAAAACAAEAAAAdAA0AAAACAAEAAAAdAA4AAAACAAEAAAAcAA8AAAABAAIAAAAbAA8AAAABAAIAAAAaAA8AAAABAAIAAAAZAA8AAAABAAIAAAAYAA8AAAABAAIAAAAXAA8AAAABAAIAAAAWAA8AAAABAAIAAAAVAA8AAAABAAIAAAAUAA8AAAABAAIAAAATAA8AAAABAAIAAAASAA8AAAABAAIAAAARAA8AAAABAAIAAAAQAA8AAAABAAIAAAAPAA8AAAABAAIAAAAOAA8AAAABAAIAAAANAA8AAAABAAIAAAAMAA8AAAABAAIAAAALAA8AAAABAAIAAAAKAA8AAAABAAIAAAAJAA8AAAABAAIAAAAIAA8AAAABAAIAAAAHAA8AAAABAAIAAAAGAA8AAAABAAIAAAAFAA8AAAABAAIAAAAEAA8AAAABAAIAAAADAA8AAAABAAIAAAACAA8AAAABAAIAAAABAA8AAAABAAIAAAAAAA4AAAAAAAEAAAAAAA0AAAAAAAEAAAAAAAwAAAAAAAEAAAAAAAsAAAAAAAEAAAAAAAoAAAAAAAEAAAAAAAkAAAAAAAEAAAAAAAgAAAAAAAEAAAAAAAcAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAAMAAAAAAAAAAAAdAAMAAAACAAAAAAABAAMAAAABAAAAAAACAAMAAAABAAAAAAADAAMAAAABAAAAAAAEAAMAAAABAAAAAAAFAAMAAAABAAAAAAAGAAMAAAABAAAAAAAHAAMAAAABAAAAAAAIAAMAAAABAAAAAAAJAAMAAAABAAAAAAAKAAMAAAABAAAAAAALAAMAAAABAAAAAAAMAAMAAAABAAAAAAANAAMAAAABAAAAAAAOAAMAAAABAAAAAAAPAAMAAAABAAAAAAAQAAMAAAABAAAAAAARAAMAAAABAAAAAAASAAMAAAABAAAAAAATAAMAAAABAAAAAAAUAAMAAAABAAAAAAAVAAMAAAABAAAAAAAWAAMAAAABAAAAAAAXAAMAAAABAAAAAAAYAAMAAAABAAAAAAAZAAMAAAABAAAAAAAaAAMAAAABAAAAAAAbAAMAAAABAAAAAAAcAAMAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_lvxce")
 physics_quadrant_size = 32
 
-[node name="obstacles" type="TileMapLayer" parent="Environment" unique_id=1171748427 groups=["WALL"]]
+[node name="Environment#obstacles" type="TileMapLayer" parent="Environment" unique_id=1171748427 groups=["WALL"]]
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAACAAYAAAAAAAEAAAADAAYAAAABAAEAAAADAAUAAAABAAAAAAAEAAYAAAACAAEAAAADAAcAAAABAAIAAAADAAkAAQAAAAAAAAAFAAkAAQACAAAAAAAFAAsAAQACAAIAAAAGAA0AAAAAAAEAAAAHAA0AAQACAAAAAAAHAA4AAAABAAIAAAAHAAUAAAAAAAEAAAAIAAUAAQACAAAAAAAIAAYAAQACAAEAAAAIAAcAAQACAAEAAAAIAAgAAAABAAIAAAALAAcAAQAAAAAAAAALAAgAAQAAAAIAAAAMAAgAAQACAAIAAAAMAAcAAQACAAAAAAAIAAoAAAAAAAEAAAAJAAsAAAABAAIAAAAPAAsAAAABAAIAAAAPAAoAAAABAAAAAAAQAAkAAAABAAIAAAAQAAgAAAABAAAAAAARAAcAAAABAAIAAAARAAYAAAABAAAAAAAUAAUAAAABAAAAAAAUAAYAAQACAAEAAAAUAAcAAQACAAEAAAAUAAgAAAABAAIAAAATAAsAAAAAAAEAAAAUAAsAAQACAAAAAAAUAAwAAQAAAAIAAAAVAAwAAAACAAEAAAAMAA4AAAAAAAEAAAANAA4AAQACAAIAAAANAA0AAAABAAAAAAAXAAoAAAABAAIAAAAYAAkAAQACAAIAAAAYAAgAAAABAAAAAAAaAAsAAAAAAAEAAAAbAAoAAAABAAAAAAAJAAoAAQACAAAAAAADAAsAAQAAAAIAAAAXAAkAAQAAAAAAAAAbAAsAAQACAAIAAAAXAAwAAQAAAAAAAAAXAA0AAAABAAIAAAAYAAwAAAACAAEAAAAbAAUAAQACAAAAAAAbAAYAAQACAAEAAAAbAAcAAQACAAIAAAAaAAUAAQAAAAAAAAAaAAYAAQACAAEAAAAaAAcAAQAAAAIAAAAXAAUAAAABAAIAAAAXAAQAAAABAAAAAAADAAoAAQAAAAEAAAAFAAoAAQACAAEAAAAEAAsAAQABAAIAAAAEAAkAAQABAAAAAAASAA0AAQACAAAAAAASAA4AAAABAAIAAAARAA0AAAAAAAEAAAA=")
 tile_set = SubResource("TileSet_5rr72")
 rendering_quadrant_size = 32
 physics_quadrant_size = 32
 
-[node name="Camera2D" type="Camera2D" parent="Environment" unique_id=1750559774]
-position = Vector2(960, 500)
-
-[node name="Gamestatechecker" parent="Environment" unique_id=985095345 node_paths=PackedStringArray("player_1_health_source", "player_2_health_source", "round_manager", "game_over_menu", "result_label", "player_1_anim", "player_2_anim") instance=ExtResource("12_kvn3m")]
+[node name="Gamestatechecker" parent="Environment" unique_id=1262587828 node_paths=PackedStringArray("player_1_health_source", "player_2_health_source", "round_manager", "game_over_menu", "result_label", "player_1_anim", "player_2_anim") instance=ExtResource("12_kvn3m")]
 player_1_health_source = NodePath("../../Player 1")
 player_2_health_source = NodePath("../../Player 2")
 health_property_name = &"lives_left"
 round_manager = NodePath("../Round Manager")
-game_over_menu = NodePath("../../CanvasLayer/Gameover")
-result_label = NodePath("../../CanvasLayer/Gameover/Label")
-player_1_anim = NodePath("../../CanvasLayer/Gameover/Player 1")
-player_2_anim = NodePath("../../CanvasLayer/Gameover/Player 2")
+game_over_menu = NodePath("../../CanvasLayer/GameOver")
+result_label = NodePath("../../CanvasLayer/GameOver/Label")
+player_1_anim = NodePath("../../CanvasLayer/GameOver/Player1")
+player_2_anim = NodePath("../../CanvasLayer/GameOver/Player2")
 
-[node name="Round Manager" parent="Environment" unique_id=1680496311 instance=ExtResource("13_nu8qx")]
-round_duration = 1.0
+[node name="Round Manager" parent="Environment" unique_id=1301805579 instance=ExtResource("13_nu8qx")]
 next_round_delay = 3.0
+
+[node name="Environment#Camera2D" type="Camera2D" parent="Environment" unique_id=1750559774]
+position = Vector2(960, 500)
 
 [node name="Lightning Rods" parent="." unique_id=1430730632 instance=ExtResource("1_3hls8")]
 position = Vector2(288, 288.00003)
@@ -381,38 +694,12 @@ position = Vector2(1056.0001, 288)
 [node name="Lightning Rods5" parent="." unique_id=1858303453 instance=ExtResource("1_3hls8")]
 position = Vector2(1056, 480)
 
-[node name="walls" type="TileMapLayer" parent="." unique_id=1760256429 groups=["WALL"]]
-scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAAdAA8AAAACAAIAAAAAAA8AAAAAAAIAAAAdAAQAAAACAAEAAAAdAAUAAAACAAEAAAAdAAYAAAACAAEAAAAdAAcAAAACAAEAAAAdAAgAAAACAAEAAAAdAAkAAAACAAEAAAAdAAoAAAACAAEAAAAdAAsAAAACAAEAAAAdAAwAAAACAAEAAAAdAA0AAAACAAEAAAAdAA4AAAACAAEAAAAcAA8AAAABAAIAAAAbAA8AAAABAAIAAAAaAA8AAAABAAIAAAAZAA8AAAABAAIAAAAYAA8AAAABAAIAAAAXAA8AAAABAAIAAAAWAA8AAAABAAIAAAAVAA8AAAABAAIAAAAUAA8AAAABAAIAAAATAA8AAAABAAIAAAASAA8AAAABAAIAAAARAA8AAAABAAIAAAAQAA8AAAABAAIAAAAPAA8AAAABAAIAAAAOAA8AAAABAAIAAAANAA8AAAABAAIAAAAMAA8AAAABAAIAAAALAA8AAAABAAIAAAAKAA8AAAABAAIAAAAJAA8AAAABAAIAAAAIAA8AAAABAAIAAAAHAA8AAAABAAIAAAAGAA8AAAABAAIAAAAFAA8AAAABAAIAAAAEAA8AAAABAAIAAAADAA8AAAABAAIAAAACAA8AAAABAAIAAAABAA8AAAABAAIAAAAAAA4AAAAAAAEAAAAAAA0AAAAAAAEAAAAAAAwAAAAAAAEAAAAAAAsAAAAAAAEAAAAAAAoAAAAAAAEAAAAAAAkAAAAAAAEAAAAAAAgAAAAAAAEAAAAAAAcAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAAMAAAAAAAAAAAAdAAMAAAACAAAAAAABAAMAAAABAAAAAAACAAMAAAABAAAAAAADAAMAAAABAAAAAAAEAAMAAAABAAAAAAAFAAMAAAABAAAAAAAGAAMAAAABAAAAAAAHAAMAAAABAAAAAAAIAAMAAAABAAAAAAAJAAMAAAABAAAAAAAKAAMAAAABAAAAAAALAAMAAAABAAAAAAAMAAMAAAABAAAAAAANAAMAAAABAAAAAAAOAAMAAAABAAAAAAAPAAMAAAABAAAAAAAQAAMAAAABAAAAAAARAAMAAAABAAAAAAASAAMAAAABAAAAAAATAAMAAAABAAAAAAAUAAMAAAABAAAAAAAVAAMAAAABAAAAAAAWAAMAAAABAAAAAAAXAAMAAAABAAAAAAAYAAMAAAABAAAAAAAZAAMAAAABAAAAAAAaAAMAAAABAAAAAAAbAAMAAAABAAAAAAAcAAMAAAABAAAAAAA=")
-tile_set = SubResource("TileSet_lvxce")
-physics_quadrant_size = 32
-
-[node name="obstacles" type="TileMapLayer" parent="." unique_id=1171748427 groups=["WALL"]]
-scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAACAAYAAAAAAAEAAAADAAYAAAABAAEAAAADAAUAAAABAAAAAAAEAAYAAAACAAEAAAADAAcAAAABAAIAAAADAAkAAQAAAAAAAAAFAAkAAQACAAAAAAAFAAsAAQACAAIAAAAGAA0AAAAAAAEAAAAHAA0AAQACAAAAAAAHAA4AAAABAAIAAAAHAAUAAAAAAAEAAAAIAAUAAQACAAAAAAAIAAYAAQACAAEAAAAIAAcAAQACAAEAAAAIAAgAAAABAAIAAAALAAcAAQAAAAAAAAALAAgAAQAAAAIAAAAMAAgAAQACAAIAAAAMAAcAAQACAAAAAAAIAAoAAAAAAAEAAAAJAAsAAAABAAIAAAAPAAsAAAABAAIAAAAPAAoAAAABAAAAAAAQAAkAAAABAAIAAAAQAAgAAAABAAAAAAARAAcAAAABAAIAAAARAAYAAAABAAAAAAAUAAUAAAABAAAAAAAUAAYAAQACAAEAAAAUAAcAAQACAAEAAAAUAAgAAAABAAIAAAATAAsAAAAAAAEAAAAUAAsAAQACAAAAAAAUAAwAAQAAAAIAAAAVAAwAAAACAAEAAAAMAA4AAAAAAAEAAAANAA4AAQACAAIAAAANAA0AAAABAAAAAAAXAAoAAAABAAIAAAAYAAkAAQACAAIAAAAYAAgAAAABAAAAAAAaAAsAAAAAAAEAAAAbAAoAAAABAAAAAAAJAAoAAQACAAAAAAADAAsAAQAAAAIAAAAXAAkAAQAAAAAAAAAbAAsAAQACAAIAAAAXAAwAAQAAAAAAAAAXAA0AAAABAAIAAAAYAAwAAAACAAEAAAAbAAUAAQACAAAAAAAbAAYAAQACAAEAAAAbAAcAAQACAAIAAAAaAAUAAQAAAAAAAAAaAAYAAQACAAEAAAAaAAcAAQAAAAIAAAAXAAUAAAABAAIAAAAXAAQAAAABAAAAAAADAAoAAQAAAAEAAAAFAAoAAQACAAEAAAAEAAsAAQABAAIAAAAEAAkAAQABAAAAAAASAA0AAQACAAAAAAASAA4AAAABAAIAAAARAA0AAAAAAAEAAAA=")
-tile_set = SubResource("TileSet_5rr72")
-rendering_quadrant_size = 32
-physics_quadrant_size = 32
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1750559774]
-position = Vector2(960, 490)
-zoom = Vector2(0.82, 0.82)
-
-[node name="Player 1" parent="." unique_id=1696317949 instance=ExtResource("10_eajg8")]
+[node name="Player 1" parent="." unique_id=1696317949 node_paths=PackedStringArray("heart_display") instance=ExtResource("10_eajg8")]
 position = Vector2(864.00006, 608)
 scale = Vector2(0.45, 0.45)
+heart_display = NodePath("../CanvasLayer/Panel/Player 1")
 
-[node name="Player 2" parent="." unique_id=1447229213 instance=ExtResource("11_1xul6")]
+[node name="Player 2" parent="." unique_id=1447229213 node_paths=PackedStringArray("heart_display") instance=ExtResource("11_1xul6")]
 position = Vector2(416, 288)
 scale = Vector2(0.45, 0.45)
-
-[node name="Gamestatechecker" parent="." unique_id=985095345 node_paths=PackedStringArray("player_1_health_source", "player_2_health_source", "round_manager", "game_over_menu", "result_label") instance=ExtResource("12_kvn3m")]
-player_1_health_source = NodePath("../Player 1")
-player_2_health_source = NodePath("../Player 2")
-health_property_name = &"lives_left"
-round_manager = NodePath("../Round Manager")
-game_over_menu = NodePath("../CanvasLayer/TextureRect")
-result_label = NodePath("../CanvasLayer/TextureRect/Label")
-
-[node name="Round Manager" parent="." unique_id=1680496311 instance=ExtResource("13_nu8qx")]
-next_round_delay = 3.0
+heart_display = NodePath("../CanvasLayer/Panel/Player 2")
