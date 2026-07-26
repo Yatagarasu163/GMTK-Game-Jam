@@ -8,10 +8,12 @@ extends CharacterBody2D
 @export var lives_left = 3
 @export var Spawn_object: PackedScene
 var input_dir
-const tile_size = 128
+@export var tile_size = 64
 var moving = false
 var previous_position : Vector2
 var facing = Vector2i.DOWN
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D;
+var current_anim: String = "Idle_Front";
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("P1 PLACE"):
@@ -26,25 +28,49 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("P1 UP"):
 		facing = Vector2i.UP
 		input_dir = Vector2(0,-1)
+		if current_anim != "Idle_Back": 
+			current_anim = "Idle_Back";
+			anim.play(current_anim);
 		collide_check()
 	elif Input.is_action_just_pressed("P1 DOWN"):
 		facing = Vector2i.DOWN
 		input_dir = Vector2(0,1)
+		
+		if current_anim != "Idle_Front": 
+			current_anim = "Idle_Front";
+			anim.play(current_anim);
+		
 		collide_check()
 	elif Input.is_action_just_pressed("P1 LEFT"):
 		facing = Vector2i.LEFT
 		input_dir = Vector2(-1,0)
+		anim.scale.x = -4;
+		current_anim = "Idle_Side";
+		anim.play(current_anim);
+		
 		collide_check()
 	elif Input.is_action_just_pressed("P1 RIGHT"):
 		facing = Vector2i.RIGHT
 		input_dir = Vector2(1,0)
+		anim.scale.x = 4;
+		current_anim = "Idle_Side";
+		anim.play(current_anim);
 		collide_check()
 		
 func collide_check():
 	if input_dir != Vector2.ZERO:
 		# Point the raycast in the direction of the input
-		ray_cast.target_position = input_dir * tile_size
+		ray_cast.target_position = input_dir * tile_size * 2
 		ray_cast.force_raycast_update()
+		print(ray_cast.target_position);
+		
+		if ray_cast.is_colliding():
+			print("Is raycast hitting: ", ray_cast.is_colliding());
+			print("I hit: ", ray_cast.get_collider());
+			var collider = ray_cast.get_collider();
+			
+			if collider.is_in_group("ROD") || collider.is_in_group("WALL"):
+				return;
 		
 		# If the raycast DOES NOT hit a wall, move!
 		if not ray_cast.is_colliding():
@@ -65,7 +91,13 @@ func move_false():
 	
 func place_object() -> void:
 	if Spawn_object:
+		if current_anim != "Place_Rod":
+			current_anim = "Place_Rod";
+			anim.play(current_anim);
+			await anim.animation_finished;
 		var new_object = Spawn_object.instantiate()
 		new_object.global_position = global_position + Vector2(facing) * tile_size
+		current_anim = "Idle_Front";
+		anim.play(current_anim);
 		
 		get_parent().add_child(new_object)

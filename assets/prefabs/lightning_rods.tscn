@@ -11,6 +11,7 @@ size = Vector2(120, 120)
 
 [node name="Lightning Rods" type="Node2D" unique_id=1430730632 groups=["ROD"]]
 z_index = 1
+scale = Vector2(0.45, 0.45)
 script = ExtResource("1_73dhi")
 lightning = ExtResource("2_8nm43")
 
