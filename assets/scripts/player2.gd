@@ -16,8 +16,10 @@ var previous_position : Vector2
 var facing = Vector2i.DOWN
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D;
 var current_anim: String = "Idle_Front";
+var is_hit_anim: bool = false;
 
 func _ready() -> void:
+	is_hit_anim = false;
 	var round_manager = get_tree().get_first_node_in_group("round_manager");
 	anim.play(current_anim);
 	
@@ -35,6 +37,7 @@ func _on_round_start(round_count: int) -> void:
 func _on_round_end(round_count: int) -> void: 
 	moving = true;
 	moves_left = 0;
+	rods_left = 0;
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("P2 PLACE"):
@@ -46,37 +49,38 @@ func _physics_process(_delta: float) -> void:
 	# Get the input direction and handle the movement
 	# Checks on button press, hold functionality can also be added but tile based bombs calls for a bit more precision
 	input_dir = Vector2.ZERO
-	if Input.is_action_just_pressed("P2 UP"):
-		facing = Vector2i.UP
-		input_dir = Vector2(0,-1)
-		if current_anim != "Idle_Back": 
-			current_anim = "Idle_Back";
+	if !is_hit_anim: 
+		if Input.is_action_just_pressed("P2 UP"):
+			facing = Vector2i.UP
+			input_dir = Vector2(0,-1)
+			if current_anim != "Idle_Back": 
+				current_anim = "Idle_Back";
+				anim.play(current_anim);
+			collide_check()
+		elif Input.is_action_just_pressed("P2 DOWN"):
+			facing = Vector2i.DOWN
+			input_dir = Vector2(0,1)
+			
+			if current_anim != "Idle_Front": 
+				current_anim = "Idle_Front";
+				anim.play(current_anim);
+			
+			collide_check()
+		elif Input.is_action_just_pressed("P2 LEFT"):
+			facing = Vector2i.LEFT
+			input_dir = Vector2(-1,0)
+			anim.scale.x = -4;
+			current_anim = "Idle_Side";
 			anim.play(current_anim);
-		collide_check()
-	elif Input.is_action_just_pressed("P2 DOWN"):
-		facing = Vector2i.DOWN
-		input_dir = Vector2(0,1)
-		
-		if current_anim != "Idle_Front": 
-			current_anim = "Idle_Front";
+			
+			collide_check()
+		elif Input.is_action_just_pressed("P2 RIGHT"):
+			facing = Vector2i.RIGHT
+			input_dir = Vector2(1,0)
+			anim.scale.x = 4;
+			current_anim = "Idle_Side";
 			anim.play(current_anim);
-		
-		collide_check()
-	elif Input.is_action_just_pressed("P2 LEFT"):
-		facing = Vector2i.LEFT
-		input_dir = Vector2(-1,0)
-		anim.scale.x = -4;
-		current_anim = "Idle_Side";
-		anim.play(current_anim);
-		
-		collide_check()
-	elif Input.is_action_just_pressed("P2 RIGHT"):
-		facing = Vector2i.RIGHT
-		input_dir = Vector2(1,0)
-		anim.scale.x = 4;
-		current_anim = "Idle_Side";
-		anim.play(current_anim);
-		collide_check()
+			collide_check()
 		
 func collide_check():
 	if input_dir != Vector2.ZERO:
@@ -123,14 +127,47 @@ func place_object() -> void:
 		
 		get_parent().add_child(new_object)
 		
+	if Input.is_action_just_pressed("P1 UP"):
+		facing = Vector2i.UP
+		input_dir = Vector2(0,-1)
+		if current_anim != "Idle_Back": 
+			current_anim = "Idle_Back";
+			anim.play(current_anim);
+		collide_check()
+	elif Input.is_action_just_pressed("P1 DOWN"):
+		facing = Vector2i.DOWN
+		input_dir = Vector2(0,1)
+		if current_anim != "Idle_Front": 
+			current_anim = "Idle_Front";
+			anim.play(current_anim);
+		collide_check()
+	elif Input.is_action_just_pressed("P1 LEFT"):
+		facing = Vector2i.LEFT
+		input_dir = Vector2(-1,0)
+		anim.scale.x = -4;
+		current_anim = "Idle_Side";
+		anim.play(current_anim);
+		collide_check()
+	elif Input.is_action_just_pressed("P1 RIGHT"):
+		facing = Vector2i.RIGHT
+		input_dir = Vector2(1,0)
+		anim.scale.x = 4;
+		current_anim = "Idle_Side";
+		anim.play(current_anim);
+		collide_check()
+		
 func is_hit() -> void:
+	is_hit_anim = true;
 	current_anim = "Hit";
 	anim.play(current_anim);
 	await anim.animation_finished;
+	is_hit_anim = false;
 	current_anim = "Idle_Front";
 	anim.play(current_anim);
 
 func is_die() -> void:
+	is_hit_anim = true;
+	moving = true;
 	current_anim = "Die";
 	anim.play(current_anim);
 	await anim.animation_finished;

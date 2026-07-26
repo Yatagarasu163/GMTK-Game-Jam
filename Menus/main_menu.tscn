@@ -7,8 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dv7tfhp0tvo5x" path="res://assets/sprites/User Interface/Button.tres" id="4_vxn86"]
 [ext_resource type="FontFile" uid="uid://bxmnx83wx3n74" path="res://assets/Fonts/LowresPixel-Regular.otf" id="4_y501u"]
 [ext_resource type="Texture2D" uid="uid://djc5jo2s1y4bn" path="res://assets/sprites/Game Over Background.png" id="5_nlkkf"]
-[ext_resource type="Texture2D" uid="uid://bji2x47u50piu" path="res://assets/sprites/Main Menu/main menu background.png" id="7_uayf2"]
-[ext_resource type="Texture2D" uid="uid://cernfwcx4mp6y" path="res://assets/sprites/Main Menu/main menu player2.png" id="9_62ju1"]
+[ext_resource type="PackedScene" uid="uid://cfjx3ggp3oc8w" path="res://assets/prefabs/background.tscn" id="8_2k0p2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7vrkn"]
 font = ExtResource("4_y501u")
@@ -16,9 +15,6 @@ font_size = 65
 
 [sub_resource type="LabelSettings" id="LabelSettings_op1xx"]
 font_size = 32
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y501u"]
-load_path = "res://.godot/imported/main menu player1.png-bb21a11ad30b3d993a30185c1eac97e5.ctex"
 
 [node name="Main Menu" type="Node2D" unique_id=142694051 node_paths=PackedStringArray("items")]
 script = ExtResource("1_7vrkn")
@@ -217,29 +213,7 @@ texture = ExtResource("5_nlkkf")
 stream = ExtResource("3_fu7sn")
 volume_db = 24.0
 
-[node name="Background" type="Control" parent="." unique_id=647723414]
-z_index = -1
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TextureRect" type="TextureRect" parent="Background" unique_id=1027882130]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(2.9952438, 2.9952438)
-texture = ExtResource("7_uayf2")
-
-[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=409009869]
-position = Vector2(403.00003, 569.00006)
-scale = Vector2(2.829012, 2.829012)
-texture = SubResource("CompressedTexture2D_y501u")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Background" unique_id=1006067670]
-position = Vector2(1575.0001, 566)
-scale = Vector2(2.829012, 2.829012)
-texture = ExtResource("9_62ju1")
+[node name="Background" parent="." unique_id=173534809 instance=ExtResource("8_2k0p2")]
 
 [connection signal="mouse_entered" from="CanvasLayer/Start" to="." method="_on_start_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Start" to="." method="_on_start_mouse_exited"]

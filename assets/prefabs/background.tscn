@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cfjx3ggp3oc8w"]
+
+[ext_resource type="Texture2D" uid="uid://bji2x47u50piu" path="res://assets/sprites/Main Menu/main menu background.png" id="1_ygsh5"]
+[ext_resource type="Texture2D" uid="uid://cernfwcx4mp6y" path="res://assets/sprites/Main Menu/main menu player2.png" id="2_vxf1n"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y501u"]
+load_path = "res://.godot/imported/main menu player1.png-bb21a11ad30b3d993a30185c1eac97e5.ctex"
+
+[node name="Background" type="Control" unique_id=173534809]
+z_index = -1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1464350192]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2.9952438, 2.9952438)
+texture = ExtResource("1_ygsh5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=137209354]
+position = Vector2(403.00003, 569.00006)
+scale = Vector2(2.829012, 2.829012)
+texture = SubResource("CompressedTexture2D_y501u")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=24594442]
+position = Vector2(1575.0001, 566)
+scale = Vector2(2.829012, 2.829012)
+texture = ExtResource("2_vxf1n")

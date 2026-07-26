@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://uwl2smd8h03y" path="res://assets/scripts/option_menu.gd" id="1_cq70r"]
 [ext_resource type="Texture2D" uid="uid://dv7tfhp0tvo5x" path="res://assets/sprites/User Interface/Button.tres" id="2_s7ibr"]
 [ext_resource type="Texture2D" uid="uid://djc5jo2s1y4bn" path="res://assets/sprites/Game Over Background.png" id="3_jlp4j"]
+[ext_resource type="PackedScene" uid="uid://cfjx3ggp3oc8w" path="res://assets/prefabs/background.tscn" id="4_beevl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lfi5k"]
 font_size = 65
@@ -73,6 +74,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Transition" type="ColorRect" parent="CanvasLayer" unique_id=881872090]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -89,5 +91,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_jlp4j")
+
+[node name="Background" parent="." unique_id=173534809 instance=ExtResource("4_beevl")]
 
 [connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]
