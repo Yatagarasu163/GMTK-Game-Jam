@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cqnok1go8um8d" path="res://assets/sprites/Tiles/lab_partition2.png" id="3_bjebc"]
 [ext_resource type="FontFile" uid="uid://bxmnx83wx3n74" path="res://assets/Fonts/LowresPixel-Regular.otf" id="3_nu8qx"]
 [ext_resource type="Texture2D" uid="uid://bi86eipf56r88" path="res://assets/sprites/Tiles/lab_partition.png" id="4_5rr72"]
+[ext_resource type="Texture2D" uid="uid://3fgx1q0jr68s" path="res://assets/sprites/User Interface/Health Asset.png" id="4_jtitw"]
 [ext_resource type="Texture2D" uid="uid://cpqtttr8dfjop" path="res://assets/sprites/Tiles/lab_partition3.png" id="5_gyffv"]
 [ext_resource type="Texture2D" uid="uid://dql40ium4d5i3" path="res://assets/sprites/Tiles/lab_partition4.png" id="6_1pe0h"]
 [ext_resource type="PackedScene" uid="uid://72mbb1ea6wht" path="res://assets/prefabs/player1.tscn" id="10_eajg8"]
@@ -20,6 +21,74 @@ font = ExtResource("3_nu8qx")
 font_size = 128
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ql73s"]
+font = ExtResource("3_nu8qx")
+font_size = 64
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnyab"]
+atlas = ExtResource("4_jtitw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ga5xt"]
+atlas = ExtResource("4_jtitw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md4w0"]
+atlas = ExtResource("4_jtitw")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1eus"]
+atlas = ExtResource("4_jtitw")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcx5e"]
+atlas = ExtResource("4_jtitw")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18ict"]
+atlas = ExtResource("4_jtitw")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5a7vs"]
+atlas = ExtResource("4_jtitw")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mloa2"]
+atlas = ExtResource("4_jtitw")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ql73s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnyab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ga5xt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md4w0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1eus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcx5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18ict")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5a7vs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mloa2")
+}],
+"loop": 1,
+"name": &"Lives",
+"speed": 5.0
+}]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hn12h"]
 texture = ExtResource("1_hbghi")
@@ -171,6 +240,96 @@ offset_bottom = 241.0
 text = "Game Over"
 label_settings = SubResource("LabelSettings_jqmmp")
 
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1593597407]
+offset_right = 1919.0
+offset_bottom = 193.0
+
+[node name="Clock" type="Label" parent="CanvasLayer/Panel" unique_id=1118268301]
+layout_mode = 0
+offset_left = 736.00006
+offset_top = 74.00001
+offset_right = 1183.0
+offset_bottom = 196.0
+label_settings = SubResource("LabelSettings_ql73s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Time Left" type="Label" parent="CanvasLayer/Panel" unique_id=1364092629]
+layout_mode = 0
+offset_left = 735.00006
+offset_top = 2.000001
+offset_right = 1182.0
+offset_bottom = 76.0
+text = "Time left"
+label_settings = SubResource("LabelSettings_ql73s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player 1" type="Label" parent="CanvasLayer/Panel" unique_id=931738312]
+layout_mode = 0
+offset_left = 160.00002
+offset_right = 606.9999
+offset_bottom = 74.0
+text = "Player 1"
+label_settings = SubResource("LabelSettings_ql73s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player 2" type="Label" parent="CanvasLayer/Panel" unique_id=1027570262]
+layout_mode = 0
+offset_left = 1312.0001
+offset_right = 1759.0
+offset_bottom = 74.0
+text = "Player 2"
+label_settings = SubResource("LabelSettings_ql73s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="P1L" type="Panel" parent="CanvasLayer/Panel" unique_id=1173319896]
+light_mask = 0
+layout_mode = 0
+offset_left = 312.00006
+offset_top = 110.00001
+offset_right = 440.00006
+offset_bottom = 154.0
+
+[node name="P1H1" type="AnimatedSprite2D" parent="CanvasLayer/Panel/P1L" unique_id=1214105180]
+position = Vector2(21, 24)
+sprite_frames = SubResource("SpriteFrames_ql73s")
+animation = &"Lives"
+
+[node name="P1H2" type="AnimatedSprite2D" parent="CanvasLayer/Panel/P1L" unique_id=1246232926]
+position = Vector2(63.00003, 24)
+sprite_frames = SubResource("SpriteFrames_ql73s")
+animation = &"Lives"
+
+[node name="P1H3" type="AnimatedSprite2D" parent="CanvasLayer/Panel/P1L" unique_id=1407001716]
+position = Vector2(105.00006, 24)
+sprite_frames = SubResource("SpriteFrames_ql73s")
+animation = &"Lives"
+
+[node name="P2L" type="Panel" parent="CanvasLayer/Panel" unique_id=439003687]
+layout_mode = 0
+offset_left = 1482.0001
+offset_top = 109.00001
+offset_right = 1610.0001
+offset_bottom = 153.0
+
+[node name="P2H1" type="AnimatedSprite2D" parent="CanvasLayer/Panel/P2L" unique_id=438668903]
+position = Vector2(21, 24)
+sprite_frames = SubResource("SpriteFrames_ql73s")
+animation = &"Lives"
+
+[node name="P2H2" type="AnimatedSprite2D" parent="CanvasLayer/Panel/P2L" unique_id=1702794990]
+position = Vector2(63.00003, 24)
+sprite_frames = SubResource("SpriteFrames_ql73s")
+animation = &"Lives"
+
+[node name="P2H3" type="AnimatedSprite2D" parent="CanvasLayer/Panel/P2L" unique_id=1301777246]
+position = Vector2(105.00006, 24)
+sprite_frames = SubResource("SpriteFrames_ql73s")
+animation = &"Lives"
+
 [node name="floor" type="TileMapLayer" parent="." unique_id=599379208]
 z_index = -2
 tile_map_data = PackedByteArray("AAABAA4AAAAAAAAAAAABAA0AAAAAAAAAAAABAAwAAAAAAAAAAAABAAsAAAAAAAAAAAABAAoAAAAAAAAAAAABAAkAAAAAAAAAAAABAAcAAAAAAAAAAAABAAYAAAAAAAAAAAACAA4AAAAAAAAAAAADAA4AAAAAAAAAAAAEAA4AAAAAAAAAAAAFAA4AAAAAAAAAAAAGAA4AAAAAAAAAAAAHAA4AAAAAAAAAAAAIAA4AAAAAAAAAAAAJAA4AAAAAAAAAAAAKAA4AAAAAAAAAAAALAA4AAAAAAAAAAAAMAA4AAAAAAAAAAAANAA4AAAAAAAAAAAAOAA4AAAAAAAAAAAAPAA4AAAAAAAAAAAAQAA4AAAAAAAAAAAAcAA4AAAAAAAAAAAAbAA4AAAAAAAAAAAAaAA4AAAAAAAAAAAAZAA4AAAAAAAAAAAAYAA4AAAAAAAAAAAAXAA4AAAAAAAAAAAAWAA4AAAAAAAAAAAAVAA4AAAAAAAAAAAAUAA4AAAAAAAAAAAATAA4AAAAAAAAAAAASAA4AAAAAAAAAAAARAA4AAAAAAAAAAAARAA0AAAAAAAAAAAAcAAQAAAAAAAAAAAAcAAUAAAAAAAAAAAAcAAYAAAAAAAAAAAAcAAcAAAAAAAAAAAAcAAgAAAAAAAAAAAAcAAkAAAAAAAAAAAAcAAoAAAAAAAAAAAAcAAsAAAAAAAAAAAAcAAwAAAAAAAAAAAAcAA0AAAAAAAAAAAAbAA0AAAAAAAAAAAAaAA0AAAAAAAAAAAAZAA0AAAAAAAAAAAAYAA0AAAAAAAAAAAAXAA0AAAAAAAAAAAAWAA0AAAAAAAAAAAAVAA0AAAAAAAAAAAAUAA0AAAAAAAAAAAATAA0AAAAAAAAAAAASAA0AAAAAAAAAAAAQAA0AAAAAAAAAAAAPAA0AAAAAAAAAAAAOAA0AAAAAAAAAAAANAA0AAAAAAAAAAAAMAA0AAAAAAAAAAAALAA0AAAAAAAAAAAAKAA0AAAAAAAAAAAAJAA0AAAAAAAAAAAAIAA0AAAAAAAAAAAAHAA0AAAAAAAAAAAAGAA0AAAAAAAAAAAAFAA0AAAAAAAAAAAAEAA0AAAAAAAAAAAAEAAwAAAAAAAAAAAADAAwAAAAAAAAAAAACAAwAAAAAAAAAAAACAA0AAAAAAAAAAAADAA0AAAAAAAAAAAAEAAsAAAAAAAAAAAADAAsAAAAAAAAAAAADAAoAAAAAAAAAAAACAAoAAAAAAAAAAAAEAAoAAAAAAAAAAAAFAAgAAAAAAAAAAAAFAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAADAAcAAAAAAAAAAAADAAgAAAAAAAAAAAAFAAkAAAAAAAAAAAACAAcAAAAAAAAAAAACAAgAAAAAAAAAAAACAAsAAAAAAAAAAAAFAAYAAAAAAAAAAAACAAYAAAAAAAAAAAAFAAsAAAAAAAAAAAAFAAoAAAAAAAAAAAAGAAkAAAAAAAAAAAAGAAgAAAAAAAAAAAAGAAcAAAAAAAAAAAAGAAYAAAAAAAAAAAAFAAwAAAAAAAAAAAAGAAoAAAAAAAAAAAAGAAwAAAAAAAAAAAAHAAsAAAAAAAAAAAAHAAoAAAAAAAAAAAAIAAoAAAAAAAAAAAAIAAkAAAAAAAAAAAAIAAgAAAAAAAAAAAAIAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAHAAYAAAAAAAAAAAAHAAwAAAAAAAAAAAAIAAwAAAAAAAAAAAAIAAsAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAoAAAAAAAAAAAAJAAkAAAAAAAAAAAAJAAgAAAAAAAAAAAAJAAcAAAAAAAAAAAAJAAYAAAAAAAAAAAAGAAsAAAAAAAAAAAAHAAgAAAAAAAAAAAAHAAkAAAAAAAAAAAAJAAwAAAAAAAAAAAAKAAwAAAAAAAAAAAAKAAsAAAAAAAAAAAAJAAsAAAAAAAAAAAALAAwAAAAAAAAAAAAMAAwAAAAAAAAAAAANAAwAAAAAAAAAAAAOAAwAAAAAAAAAAAAPAAwAAAAAAAAAAAAPAAsAAAAAAAAAAAAOAAsAAAAAAAAAAAANAAsAAAAAAAAAAAAMAAsAAAAAAAAAAAALAAsAAAAAAAAAAAAQAAsAAAAAAAAAAAARAAsAAAAAAAAAAAASAAsAAAAAAAAAAAATAAwAAAAAAAAAAAAUAAwAAAAAAAAAAAAVAAwAAAAAAAAAAAASAAwAAAAAAAAAAAARAAwAAAAAAAAAAAAQAAwAAAAAAAAAAAAWAAwAAAAAAAAAAAAXAAwAAAAAAAAAAAAYAAwAAAAAAAAAAAAZAAwAAAAAAAAAAAAaAAwAAAAAAAAAAAAaAAsAAAAAAAAAAAAbAAsAAAAAAAAAAAAbAAwAAAAAAAAAAAAZAAsAAAAAAAAAAAAYAAsAAAAAAAAAAAAXAAsAAAAAAAAAAAAWAAsAAAAAAAAAAAAVAAsAAAAAAAAAAAAUAAsAAAAAAAAAAAATAAsAAAAAAAAAAAALAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAAKAAkAAAAAAAAAAAAKAAYAAAAAAAAAAAAMAAoAAAAAAAAAAAAMAAkAAAAAAAAAAAAMAAgAAAAAAAAAAAAMAAcAAAAAAAAAAAALAAcAAAAAAAAAAAALAAgAAAAAAAAAAAAKAAgAAAAAAAAAAAALAAkAAAAAAAAAAAALAAYAAAAAAAAAAAAKAAcAAAAAAAAAAAAMAAYAAAAAAAAAAAANAAkAAAAAAAAAAAANAAgAAAAAAAAAAAANAAcAAAAAAAAAAAAOAAUAAAAAAAAAAAANAAoAAAAAAAAAAAAOAAgAAAAAAAAAAAAOAAcAAAAAAAAAAAAOAAkAAAAAAAAAAAAPAAkAAAAAAAAAAAAPAAgAAAAAAAAAAAAQAAcAAAAAAAAAAAAQAAQAAAAAAAAAAAAPAAcAAAAAAAAAAAAPAAoAAAAAAAAAAAAQAAoAAAAAAAAAAAARAAoAAAAAAAAAAAARAAkAAAAAAAAAAAARAAgAAAAAAAAAAAASAAgAAAAAAAAAAAASAAcAAAAAAAAAAAASAAYAAAAAAAAAAAASAAUAAAAAAAAAAAARAAQAAAAAAAAAAAAQAAkAAAAAAAAAAAATAAcAAAAAAAAAAAATAAYAAAAAAAAAAAASAAoAAAAAAAAAAAASAAkAAAAAAAAAAAATAAgAAAAAAAAAAAAOAAoAAAAAAAAAAAARAAcAAAAAAAAAAAAQAAgAAAAAAAAAAAATAAoAAAAAAAAAAAAUAAoAAAAAAAAAAAAUAAkAAAAAAAAAAAAUAAgAAAAAAAAAAAAUAAcAAAAAAAAAAAATAAUAAAAAAAAAAAAUAAUAAAAAAAAAAAAUAAQAAAAAAAAAAAATAAQAAAAAAAAAAAASAAQAAAAAAAAAAAATAAkAAAAAAAAAAAAUAAYAAAAAAAAAAAAVAAkAAAAAAAAAAAAVAAgAAAAAAAAAAAAWAAcAAAAAAAAAAAAWAAYAAAAAAAAAAAAWAAUAAAAAAAAAAAAWAAQAAAAAAAAAAAAVAAQAAAAAAAAAAAAVAAoAAAAAAAAAAAAXAAoAAAAAAAAAAAAXAAkAAAAAAAAAAAAXAAgAAAAAAAAAAAAXAAcAAAAAAAAAAAAXAAYAAAAAAAAAAAAWAAoAAAAAAAAAAAAYAAkAAAAAAAAAAAAYAAgAAAAAAAAAAAAZAAgAAAAAAAAAAAAZAAcAAAAAAAAAAAAZAAYAAAAAAAAAAAAZAAUAAAAAAAAAAAAYAAQAAAAAAAAAAAAVAAUAAAAAAAAAAAAWAAkAAAAAAAAAAAAZAAkAAAAAAAAAAAAaAAcAAAAAAAAAAAAaAAYAAAAAAAAAAAAXAAQAAAAAAAAAAAAXAAUAAAAAAAAAAAAVAAYAAAAAAAAAAAAVAAcAAAAAAAAAAAAZAAoAAAAAAAAAAAAYAAYAAAAAAAAAAAAYAAUAAAAAAAAAAAAWAAgAAAAAAAAAAAAaAAoAAAAAAAAAAAAbAAoAAAAAAAAAAAAbAAkAAAAAAAAAAAAbAAgAAAAAAAAAAAAaAAkAAAAAAAAAAAAaAAgAAAAAAAAAAAAYAAcAAAAAAAAAAAAYAAoAAAAAAAAAAAAaAAQAAAAAAAAAAAAaAAUAAAAAAAAAAAAbAAQAAAAAAAAAAAAZAAQAAAAAAAAAAAAbAAYAAAAAAAAAAAAbAAcAAAAAAAAAAAAbAAUAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAADAAYAAAAAAAAAAAADAAUAAAAAAAAAAAACAAUAAAAAAAAAAAABAAgAAAAAAAAAAAACAAkAAAAAAAAAAAADAAkAAAAAAAAAAAAEAAkAAAAAAAAAAAAEAAgAAAAAAAAAAAAEAAYAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAJAAQAAAAAAAAAAAAKAAQAAAAAAAAAAAALAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAANAAQAAAAAAAAAAAAOAAQAAAAAAAAAAAAPAAQAAAAAAAAAAAAGAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAKAAUAAAAAAAAAAAALAAUAAAAAAAAAAAAMAAUAAAAAAAAAAAANAAUAAAAAAAAAAAAPAAUAAAAAAAAAAAAQAAUAAAAAAAAAAAANAAYAAAAAAAAAAAAOAAYAAAAAAAAAAAAPAAYAAAAAAAAAAAAQAAYAAAAAAAAAAAARAAUAAAAAAAAAAAARAAYAAAAAAAAAAAA=")
@@ -210,11 +369,11 @@ position = Vector2(960, 490)
 zoom = Vector2(0.82, 0.82)
 
 [node name="Player 1" parent="." unique_id=1696317949 instance=ExtResource("10_eajg8")]
-position = Vector2(864, 608.00006)
+position = Vector2(864.00006, 608)
 scale = Vector2(0.45, 0.45)
 
 [node name="Player 2" parent="." unique_id=1447229213 instance=ExtResource("11_1xul6")]
-position = Vector2(416, 290)
+position = Vector2(416, 288)
 scale = Vector2(0.45, 0.45)
 
 [node name="Gamestatechecker" parent="." unique_id=985095345 node_paths=PackedStringArray("player_1_health_source", "player_2_health_source", "round_manager", "game_over_menu", "result_label") instance=ExtResource("12_kvn3m")]
