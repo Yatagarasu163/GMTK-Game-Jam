@@ -40,7 +40,7 @@ func _ready() -> void:
 	if game_over_menu != null:
 		game_over_menu.hide()
 
-		# Allows the menu and its buttons to work while the game is paused.
+		# Allows the menu and its buttons to work while the game is paused. 
 		game_over_menu.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 
 

@@ -3,8 +3,10 @@ extends CharacterBody2D
 
 @onready var ray_cast = $RayCast2D
 @onready var sprite = $Sprite2D # Visual node
-@export var moves_left = 10
-@export var rods_left = 4
+@export var max_moves_left = 10
+var moves_left = max_moves_left;
+@export var max_rods_left = 2;
+var rods_left = max_rods_left;
 @export var lives_left = 3
 @export var Spawn_object: PackedScene
 var input_dir
@@ -14,6 +16,24 @@ var previous_position : Vector2
 var facing = Vector2i.DOWN
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D;
 var current_anim: String = "Idle_Front";
+
+func _ready() -> void:
+	var round_manager = get_tree().get_first_node_in_group("round_manager");
+	anim.play(current_anim);
+	
+	if round_manager:
+		round_manager.round_started.connect(_on_round_start);
+		round_manager.round_ended.connect(_on_round_end);
+	
+
+func _on_round_start(round_count: int) -> void:
+	moves_left = max_moves_left;
+	rods_left = max_rods_left;
+	moving = false;
+	
+func _on_round_end(round_count: int) -> void:
+	moving = true;
+	moves_left = 0;
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("P1 PLACE"):
@@ -101,3 +121,15 @@ func place_object() -> void:
 		anim.play(current_anim);
 		
 		get_parent().add_child(new_object)
+
+func is_hit() -> void:
+	current_anim = "Hit";
+	anim.play(current_anim);
+	await anim.animation_finished;
+	current_anim = "Idle_Front";
+	anim.play(current_anim);
+	
+func is_die() -> void: 
+	current_anim = "Die";
+	anim.play(current_anim);
+	await anim.animation_finished;

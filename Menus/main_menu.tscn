@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cm2o83fg2iboh"]
 
 [ext_resource type="Script" uid="uid://ctk0r5nikli70" path="res://assets/scripts/main_menu.gd" id="1_7vrkn"]
+[ext_resource type="PackedScene" uid="uid://bpsgh502f7ys5" path="res://Level Scenes/level_1.tscn" id="2_vxn86"]
 [ext_resource type="AudioStream" uid="uid://b7ydvbm4fwd1k" path="res://universfield-whip-snap-242215.mp3" id="3_fu7sn"]
-[ext_resource type="PackedScene" uid="uid://bpsgh502f7ys5" path="res://Level Scenes/level_1.tscn" id="3_glbon"]
 [ext_resource type="PackedScene" uid="uid://dxemsreci3o14" path="res://Menus/option_menu.tscn" id="3_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://dv7tfhp0tvo5x" path="res://assets/sprites/User Interface/Button.tres" id="4_vxn86"]
 [ext_resource type="Texture2D" uid="uid://djc5jo2s1y4bn" path="res://assets/sprites/Game Over Background.png" id="5_nlkkf"]
@@ -15,7 +15,7 @@ font_size = 32
 
 [node name="Main Menu" type="Node2D" unique_id=142694051 node_paths=PackedStringArray("items")]
 script = ExtResource("1_7vrkn")
-playScene = ExtResource("3_glbon")
+playScene = ExtResource("2_vxn86")
 optionScene = ExtResource("3_nlkkf")
 items = [NodePath("CanvasLayer/Title"), NodePath("CanvasLayer/Start"), NodePath("CanvasLayer/Options?"), NodePath("CanvasLayer/Whip"), NodePath("CanvasLayer/Quit")]
 

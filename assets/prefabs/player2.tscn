@@ -3,12 +3,62 @@
 [ext_resource type="Script" uid="uid://bh0dnyeg81on6" path="res://assets/scripts/player2.gd" id="1_rihsh"]
 [ext_resource type="PackedScene" uid="uid://7gwr8k3w8co1" path="res://assets/prefabs/lightning_rods.tscn" id="2_h6k68"]
 [ext_resource type="Texture2D" uid="uid://lld2pviaw4ns" path="res://assets/sprites/Player 1 and 2/P2_Back_Idle.png" id="3_4idbu"]
+[ext_resource type="Texture2D" uid="uid://cfgpeqa45yq5d" path="res://assets/sprites/Player 1 and 2/P2_Death.png" id="3_26cgk"]
+[ext_resource type="Texture2D" uid="uid://buvof8l0elfpr" path="res://assets/sprites/Player 1 and 2/P2_Damaged.png" id="3_56lx4"]
 [ext_resource type="Texture2D" uid="uid://jiyhx2cxpa42" path="res://assets/sprites/Player 1 and 2/P2_Front_Idle.png" id="3_pd6rn"]
 [ext_resource type="Texture2D" uid="uid://bhk82qw507ysd" path="res://assets/sprites/Player 1 and 2/P2_Side_Idle.png" id="5_4idbu"]
 [ext_resource type="Texture2D" uid="uid://wwnplb44l7uq" path="res://assets/sprites/Player 1 and 2/P2_PutDown.png" id="6_d4t5a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oeq8l"]
 size = Vector2(130, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w712o"]
+atlas = ExtResource("3_26cgk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5k8x"]
+atlas = ExtResource("3_26cgk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8kd4"]
+atlas = ExtResource("3_26cgk")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k78ju"]
+atlas = ExtResource("3_26cgk")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cabre"]
+atlas = ExtResource("3_26cgk")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxfkv"]
+atlas = ExtResource("3_26cgk")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4dum"]
+atlas = ExtResource("3_56lx4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro7hf"]
+atlas = ExtResource("3_56lx4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ubvl"]
+atlas = ExtResource("3_56lx4")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wthn"]
+atlas = ExtResource("3_56lx4")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_padix"]
+atlas = ExtResource("3_56lx4")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_635d0"]
+atlas = ExtResource("3_56lx4")
+region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_24csa"]
 atlas = ExtResource("3_4idbu")
@@ -144,6 +194,52 @@ region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_op1xx"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w712o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5k8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8kd4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k78ju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cabre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxfkv")
+}],
+"loop": 0,
+"name": &"Die",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4dum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro7hf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ubvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wthn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_padix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_635d0")
+}],
+"loop": 0,
+"name": &"Hit",
+"speed": 15.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_24csa")
@@ -282,7 +378,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ql73s"]
 size = Vector2(128, 127)
 
-[node name="Player 2" type="CharacterBody2D" unique_id=1696317949]
+[node name="Player 2" type="CharacterBody2D" unique_id=1696317949 groups=["PLAYER"]]
 motion_mode = 1
 script = ExtResource("1_rihsh")
 Spawn_object = ExtResource("2_h6k68")
@@ -294,7 +390,7 @@ shape = SubResource("RectangleShape2D_oeq8l")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=453674343]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_op1xx")
-animation = &"Place_Rod"
+animation = &"Die"
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1264230522]
 target_position = Vector2(0, 64)

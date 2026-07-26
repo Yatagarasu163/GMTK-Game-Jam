@@ -40,7 +40,7 @@ func _on_start_pressed() -> void:
 	var tween = create_tween()
 	tween.tween_property(transitionBlock, "position:x", 0, 0.25)
 	await tween.finished
-	get_tree().change_scene_to_packed(playScene)
+	get_tree().change_scene_to_packed(playScene);
 
 
 func _on_options_pressed() -> void:
