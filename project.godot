@@ -33,6 +33,7 @@ ROD=""
 WALL=""
 round_manager=""
 PLAYER=""
+state_checker=""
 
 [input]
 
