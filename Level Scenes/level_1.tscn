@@ -756,7 +756,6 @@ player_1_anim = NodePath("../../CanvasLayer/GameOver/Player1")
 player_2_anim = NodePath("../../CanvasLayer/GameOver/Player2")
 
 [node name="Round Manager" parent="Environment" unique_id=1301805579 instance=ExtResource("13_nu8qx")]
-round_duration = 0.1
 next_round_delay = 3.0
 
 [node name="Environment#Camera2D" type="Camera2D" parent="Environment" unique_id=1750559774]
