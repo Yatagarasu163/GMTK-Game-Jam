@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cfjx3ggp3oc8w"]
 
-[ext_resource type="Script" uid="uid://djanvincoyt4h" path="res://assets/prefabs/background.gd" id="1_hk3qb"]
-[ext_resource type="Texture2D" uid="uid://bji2x47u50piu" path="res://assets/sprites/Main Menu/main menu background.png" id="1_ygsh5"]
-[ext_resource type="Texture2D" uid="uid://cernfwcx4mp6y" path="res://assets/sprites/Main Menu/main menu player2.png" id="2_vxf1n"]
-[ext_resource type="Texture2D" uid="uid://blntgcohkak7e" path="res://assets/sprites/Main Menu/main menu player1.png" id="3_rrw0u"]
+[ext_resource type="Script" uid="uid://djanvincoyt4h" path="res://assets/scripts/background.gd" id="1_hk3qb"]
+[ext_resource type="Texture2D" uid="uid://bji2x47u50piu" path="res://assets/sprites/User Interface/Main Menu/main menu background.png" id="1_ygsh5"]
+[ext_resource type="Texture2D" uid="uid://cernfwcx4mp6y" path="res://assets/sprites/User Interface/Main Menu/main menu player2.png" id="2_vxf1n"]
+[ext_resource type="Texture2D" uid="uid://blntgcohkak7e" path="res://assets/sprites/User Interface/Main Menu/main menu player1.png" id="3_rrw0u"]
 
 [node name="Background" type="Control" unique_id=173534809]
 z_index = -1

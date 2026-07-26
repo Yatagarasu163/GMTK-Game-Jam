@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dql40ium4d5i3" path="res://assets/sprites/Tiles/lab_partition4.png" id="6_1pe0h"]
 [ext_resource type="Texture2D" uid="uid://cfgpeqa45yq5d" path="res://assets/sprites/Player 1 and 2/P2_Death.png" id="6_md4w0"]
 [ext_resource type="Texture2D" uid="uid://jiyhx2cxpa42" path="res://assets/sprites/Player 1 and 2/P2_Front_Idle.png" id="7_l1eus"]
-[ext_resource type="Texture2D" uid="uid://bji2x47u50piu" path="res://assets/sprites/Main Menu/main menu background.png" id="8_l1eus"]
+[ext_resource type="Texture2D" uid="uid://bji2x47u50piu" path="res://assets/sprites/User Interface/Main Menu/main menu background.png" id="8_l1eus"]
 [ext_resource type="PackedScene" uid="uid://72mbb1ea6wht" path="res://assets/prefabs/player1.tscn" id="10_eajg8"]
 [ext_resource type="PackedScene" uid="uid://ylnlr7c4cgtq" path="res://assets/prefabs/player2.tscn" id="11_1xul6"]
 [ext_resource type="PackedScene" uid="uid://cut33rjbus1nb" path="res://Prefabs/gamestatechecker.tscn" id="12_kvn3m"]
@@ -396,32 +396,37 @@ grow_vertical = 2
 texture = ExtResource("2_5rr72")
 
 [node name="Gameover" type="TextureRect" parent="CanvasLayer" unique_id=1905662332]
-offset_right = 2500.1497
-offset_bottom = 1341.0
-scale = Vector2(0.8076313, 0.8076313)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_5rr72")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="CanvasLayer/Gameover" unique_id=866050409]
-layout_mode = 0
-offset_left = 965.7873
-offset_top = 112.0
-offset_right = 1602.7874
-offset_bottom = 241.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -318.5
+offset_top = 250.0
+offset_right = 318.5
+offset_bottom = 379.0
+grow_horizontal = 2
 text = "Game Over"
 label_settings = SubResource("LabelSettings_jqmmp")
 
-[node name="Player 1" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=662222531]
+[node name="Player 1" type="AnimatedSprite2D" parent="CanvasLayer/Gameover" unique_id=662222531]
 process_mode = 3
-visible = false
 position = Vector2(342.00003, 547.0001)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_jqmmp")
 animation = &"player_live"
 
-[node name="Player 2" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1191544347]
+[node name="Player 2" type="AnimatedSprite2D" parent="CanvasLayer/Gameover" unique_id=1191544347]
 process_mode = 3
-visible = false
-position = Vector2(1686.0002, 546.0001)
+position = Vector2(1686.0001, 546.0001)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_mnyab")
 animation = &"player_live"
@@ -484,8 +489,9 @@ health_property_name = &"lives_left"
 round_manager = NodePath("../Round Manager")
 game_over_menu = NodePath("../CanvasLayer/Gameover")
 result_label = NodePath("../CanvasLayer/Gameover/Label")
-player_1_anim = NodePath("../CanvasLayer/Player 1")
-player_2_anim = NodePath("../CanvasLayer/Player 2")
+player_1_anim = NodePath("../CanvasLayer/Gameover/Player 1")
+player_2_anim = NodePath("../CanvasLayer/Gameover/Player 2")
 
 [node name="Round Manager" parent="." unique_id=1680496311 instance=ExtResource("13_nu8qx")]
+round_duration = 1.0
 next_round_delay = 3.0
