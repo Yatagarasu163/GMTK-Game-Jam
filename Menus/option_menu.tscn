@@ -11,9 +11,14 @@ font_size = 65
 [sub_resource type="LabelSettings" id="LabelSettings_bdn42"]
 font_size = 32
 
-[node name="Option Menu" type="Node2D" unique_id=965566193 node_paths=PackedStringArray("items")]
+[node name="Option Menu" type="Node2D" unique_id=965566193 node_paths=PackedStringArray("master_slider", "bgm_slider", "sfx_slider", "master_value_label", "bgm_value_label", "sfx_value_label")]
 script = ExtResource("1_cq70r")
-items = [NodePath("CanvasLayer/Title"), NodePath("CanvasLayer/Back")]
+master_slider = NodePath("CanvasLayer/Title/VolumeSettings/MasterSlider")
+bgm_slider = NodePath("CanvasLayer/Title/VolumeSettings/BGMSlider")
+sfx_slider = NodePath("CanvasLayer/Title/VolumeSettings/SFXSlider")
+master_value_label = NodePath("CanvasLayer/Title/VolumeSettings/MasterValueLabel")
+bgm_value_label = NodePath("CanvasLayer/Title/VolumeSettings/BGMValueLabel")
+sfx_value_label = NodePath("CanvasLayer/Title/VolumeSettings/SFXValueLabel")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=129466431]
 scale = Vector2(0.99999994, 0.99999994)
@@ -37,6 +42,44 @@ text = "OPTIONS"
 label_settings = SubResource("LabelSettings_lfi5k")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="VolumeSettings" type="BoxContainer" parent="CanvasLayer/Title" unique_id=433222931]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MasterLabel" type="Label" parent="CanvasLayer/Title/VolumeSettings" unique_id=593203274]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="MasterSlider" type="HSlider" parent="CanvasLayer/Title/VolumeSettings" unique_id=1868589759]
+layout_mode = 2
+value = 100.0
+
+[node name="BGMLabel" type="Label" parent="CanvasLayer/Title/VolumeSettings" unique_id=1278274805]
+layout_mode = 2
+text = "Background Music"
+
+[node name="BGMSlider" type="HSlider" parent="CanvasLayer/Title/VolumeSettings" unique_id=704299566]
+layout_mode = 2
+value = 100.0
+
+[node name="SFXLabel" type="Label" parent="CanvasLayer/Title/VolumeSettings" unique_id=1609144074]
+layout_mode = 2
+text = "Sound Effects"
+
+[node name="SFXSlider" type="HSlider" parent="CanvasLayer/Title/VolumeSettings" unique_id=1730255442]
+layout_mode = 2
+value = 100.0
+
+[node name="MasterValueLabel" type="Label" parent="CanvasLayer/Title/VolumeSettings" unique_id=1054683936]
+layout_mode = 2
+
+[node name="BGMValueLabel" type="Label" parent="CanvasLayer/Title/VolumeSettings" unique_id=388478353]
+layout_mode = 2
+
+[node name="SFXValueLabel" type="Label" parent="CanvasLayer/Title/VolumeSettings" unique_id=1727119455]
+layout_mode = 2
 
 [node name="Back" type="Button" parent="CanvasLayer" unique_id=448366569]
 anchors_preset = 8
