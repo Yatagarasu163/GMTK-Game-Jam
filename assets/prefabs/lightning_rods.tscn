@@ -3,212 +3,11 @@
 [ext_resource type="Script" uid="uid://bewflk50lm0s" path="res://assets/scripts/lightning_rods.gd" id="1_73dhi"]
 [ext_resource type="PackedScene" uid="uid://dw4lxnn8auf2i" path="res://assets/prefabs/lightning_strike.tscn" id="2_8nm43"]
 [ext_resource type="Texture2D" uid="uid://bswb8ax3mbp6x" path="res://assets/sprites/Lightning + Rod Sprites/Lightning Rod.png" id="3_8nm43"]
-[ext_resource type="Texture2D" uid="uid://dub6j5ejysqke" path="res://assets/sprites/Lightning + Rod Sprites/Half Lightning Strike/Half Lightning Strike_0000-sheet.png" id="4_qujew"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqmmp"]
 size = Vector2(120, 120)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_op1xx"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qlpjw"]
-atlas = ExtResource("4_qujew")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0y32p"]
-atlas = ExtResource("4_qujew")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vmxwg"]
-atlas = ExtResource("4_qujew")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d01yg"]
-atlas = ExtResource("4_qujew")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l4e33"]
-atlas = ExtResource("4_qujew")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rowmi"]
-atlas = ExtResource("4_qujew")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_jqmmp"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qlpjw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0y32p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vmxwg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d01yg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l4e33")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rowmi")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qujew"]
-atlas = ExtResource("4_qujew")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xornp"]
-atlas = ExtResource("4_qujew")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xt2yf"]
-atlas = ExtResource("4_qujew")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2wojg"]
-atlas = ExtResource("4_qujew")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nu46o"]
-atlas = ExtResource("4_qujew")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6pn63"]
-atlas = ExtResource("4_qujew")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ioeof"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qujew")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xornp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xt2yf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2wojg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nu46o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6pn63")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ea2jh"]
-atlas = ExtResource("4_qujew")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uelgu"]
-atlas = ExtResource("4_qujew")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q585w"]
-atlas = ExtResource("4_qujew")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sslml"]
-atlas = ExtResource("4_qujew")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rurr2"]
-atlas = ExtResource("4_qujew")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xmrhi"]
-atlas = ExtResource("4_qujew")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_5cxaw"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ea2jh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uelgu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q585w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sslml")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rurr2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xmrhi")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1oayv"]
-atlas = ExtResource("4_qujew")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r3l42"]
-atlas = ExtResource("4_qujew")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dvq12"]
-atlas = ExtResource("4_qujew")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b2af6"]
-atlas = ExtResource("4_qujew")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eoqks"]
-atlas = ExtResource("4_qujew")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s88s6"]
-atlas = ExtResource("4_qujew")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_5lf05"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1oayv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r3l42")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dvq12")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b2af6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eoqks")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s88s6")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="Lightning Rods" type="Node2D" unique_id=1430730632 groups=["ROD"]]
 z_index = 1
@@ -222,7 +21,6 @@ lightning = ExtResource("2_8nm43")
 shape = SubResource("RectangleShape2D_jqmmp")
 
 [node name="Check Hitbox" type="Area2D" parent="." unique_id=69636173]
-scale = Vector2(0.5, 0.5)
 disable_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Check Hitbox" unique_id=1114796991]
@@ -234,31 +32,6 @@ texture = ExtResource("3_8nm43")
 
 [node name="Lightning" type="AnimatedSprite2D" parent="." unique_id=122824327]
 sprite_frames = SubResource("SpriteFrames_op1xx")
-
-[node name="Lightning Directions" type="Node2D" parent="." unique_id=1221484769]
-
-[node name="RightLightning" type="AnimatedSprite2D" parent="Lightning Directions" unique_id=1033780726]
-position = Vector2(11.11111, -4.444439)
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_jqmmp")
-
-[node name="LeftLightning" type="AnimatedSprite2D" parent="Lightning Directions" unique_id=1993181917]
-position = Vector2(-15.555565, -4.4444456)
-scale = Vector2(-3, 3)
-sprite_frames = SubResource("SpriteFrames_ioeof")
-
-[node name="DownLightning" type="AnimatedSprite2D" parent="Lightning Directions" unique_id=2060251256]
-position = Vector2(4.4444447, 13.333336)
-rotation = 1.5707964
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_5cxaw")
-
-[node name="UpLightning" type="AnimatedSprite2D" parent="Lightning Directions" unique_id=1977851611]
-z_index = 1
-position = Vector2(-2.2222223, -11.111103)
-rotation = -1.5707964
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_5lf05")
 
 [connection signal="area_entered" from="Check Hitbox" to="." method="_on_check_hitbox_area_entered"]
 [connection signal="body_entered" from="Check Hitbox" to="." method="_on_check_hitbox_body_entered"]
