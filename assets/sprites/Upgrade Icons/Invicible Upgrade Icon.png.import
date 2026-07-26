@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o0qcxxmxjap4"
-path="res://.godot/imported/P1_Side_Walk.png-f61b221956315f948b7b7a3e86ebf4ef.ctex"
+uid="uid://43as45l6lfei"
+path="res://.godot/imported/Invicible Upgrade Icon.png-3ab71d009735fd34187119351d3b5837.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Player/P1_Side_Walk.png"
-dest_files=["res://.godot/imported/P1_Side_Walk.png-f61b221956315f948b7b7a3e86ebf4ef.ctex"]
+source_file="res://assets/sprites/Upgrade Icons/Invicible Upgrade Icon.png"
+dest_files=["res://.godot/imported/Invicible Upgrade Icon.png-3ab71d009735fd34187119351d3b5837.ctex"]
 
 [params]
 

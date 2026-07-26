@@ -1,30 +1,18 @@
 [gd_scene format=3 uid="uid://7gwr8k3w8co1"]
 
 [ext_resource type="Script" uid="uid://bewflk50lm0s" path="res://assets/scripts/lightning_rods.gd" id="1_73dhi"]
-[ext_resource type="Texture2D" uid="uid://otmod6nckeaw" path="res://icon.svg" id="1_u31yo"]
 [ext_resource type="PackedScene" uid="uid://dw4lxnn8auf2i" path="res://assets/prefabs/lightning_strike.tscn" id="2_8nm43"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_jqmmp"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_u31yo")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://bswb8ax3mbp6x" path="res://assets/sprites/Lightning + Rod Sprites/Lightning Rod.png" id="3_8nm43"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqmmp"]
 size = Vector2(120, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_op1xx"]
 
 [node name="Lightning Rods" type="Node2D" unique_id=1430730632 groups=["ROD"]]
 z_index = 1
 script = ExtResource("1_73dhi")
 lightning = ExtResource("2_8nm43")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=875466999]
-sprite_frames = SubResource("SpriteFrames_jqmmp")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=358568136 groups=["ROD"]]
 
@@ -36,6 +24,13 @@ disable_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Check Hitbox" unique_id=1114796991]
 shape = SubResource("RectangleShape2D_jqmmp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=279663818]
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("3_8nm43")
+
+[node name="Lightning" type="AnimatedSprite2D" parent="." unique_id=122824327]
+sprite_frames = SubResource("SpriteFrames_op1xx")
 
 [connection signal="area_entered" from="Check Hitbox" to="." method="_on_check_hitbox_area_entered"]
 [connection signal="body_entered" from="Check Hitbox" to="." method="_on_check_hitbox_body_entered"]

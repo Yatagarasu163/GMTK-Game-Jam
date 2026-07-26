@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cm2o83fg2iboh"]
 
 [ext_resource type="Script" uid="uid://ctk0r5nikli70" path="res://assets/scripts/main_menu.gd" id="1_7vrkn"]
-[ext_resource type="Texture2D" path="res://icon.svg" id="2_fu7sn"]
 [ext_resource type="AudioStream" uid="uid://b7ydvbm4fwd1k" path="res://universfield-whip-snap-242215.mp3" id="3_fu7sn"]
 [ext_resource type="PackedScene" uid="uid://bpsgh502f7ys5" path="res://Level Scenes/level_1.tscn" id="3_glbon"]
 [ext_resource type="PackedScene" uid="uid://dxemsreci3o14" path="res://Menus/option_menu.tscn" id="3_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://dv7tfhp0tvo5x" path="res://assets/sprites/User Interface/Button.tres" id="4_vxn86"]
 [ext_resource type="Texture2D" uid="uid://djc5jo2s1y4bn" path="res://assets/sprites/Game Over Background.png" id="5_nlkkf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7vrkn"]
@@ -58,11 +58,12 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -32.0
-offset_bottom = 32.0
+offset_left = -25.0
+offset_right = 25.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_fu7sn")
+texture = ExtResource("4_vxn86")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="CanvasLayer/Start" unique_id=1095515666]
 layout_mode = 1
@@ -88,14 +89,17 @@ offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Options?" unique_id=1062047068]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Options?" unique_id=1028142357]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -25.0
+offset_right = 25.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_fu7sn")
+texture = ExtResource("4_vxn86")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="CanvasLayer/Options?" unique_id=922009960]
 layout_mode = 1
@@ -122,14 +126,17 @@ offset_bottom = 164.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Whip" unique_id=1501167078]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Whip" unique_id=394361837]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -25.0
+offset_right = 25.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_fu7sn")
+texture = ExtResource("4_vxn86")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="CanvasLayer/Whip" unique_id=345608625]
 layout_mode = 1
@@ -156,14 +163,17 @@ offset_bottom = 264.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Quit" unique_id=171282308]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Quit" unique_id=1583777555]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -25.0
+offset_right = 25.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_fu7sn")
+texture = ExtResource("4_vxn86")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="CanvasLayer/Quit" unique_id=1727577817]
 layout_mode = 1

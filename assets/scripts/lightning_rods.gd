@@ -15,8 +15,7 @@ func _ready() -> void:
 	lightning = preload("res://assets/prefabs/lightning_strike.tscn");
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("jump"):
-		Go_Check()
+	pass
 
 func Go_Check():
 	#clearing all previous bolts

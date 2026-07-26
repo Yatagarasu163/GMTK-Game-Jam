@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var moves_left = 10
 @export var rods_left = 4
 @export var lives_left = 3
-@export var Spawn_object = preload("res://rod.tscn")
+@export var Spawn_object: PackedScene
 var input_dir
 const tile_size = 128
 var moving = false

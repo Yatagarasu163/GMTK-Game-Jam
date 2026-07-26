@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://72mbb1ea6wht"]
 
 [ext_resource type="Script" uid="uid://24kncx6cqrwt" path="res://assets/scripts/player.gd" id="1_eer7a"]
+[ext_resource type="PackedScene" uid="uid://7gwr8k3w8co1" path="res://assets/prefabs/lightning_rods.tscn" id="2_8gmtw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oeq8l"]
 size = Vector2(130, 127)
@@ -11,6 +12,7 @@ size = Vector2(128, 127)
 [node name="Player 1" type="CharacterBody2D" unique_id=1696317949]
 motion_mode = 1
 script = ExtResource("1_eer7a")
+Spawn_object = ExtResource("2_8gmtw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=969446777]
 position = Vector2(0, -0.5)

@@ -1,6 +1,4 @@
-[gd_scene format=3 uid="uid://0egwdaaq2slt"]
-
-[ext_resource type="Texture2D" uid="uid://otmod6nckeaw" path="res://icon.svg" id="1_fp7sv"]
+[gd_scene format=3 uid="uid://jib41m1dq0el"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ql73s"]
 size = Vector2(127, 128)
@@ -12,5 +10,4 @@ process_mode = 3
 shape = SubResource("RectangleShape2D_ql73s")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2004938162]
-texture = ExtResource("1_fp7sv")
 flip_v = true

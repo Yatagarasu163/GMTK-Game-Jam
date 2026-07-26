@@ -1,55 +1,36 @@
 [gd_scene format=3 uid="uid://dw4lxnn8auf2i"]
 
-[ext_resource type="Texture2D" uid="uid://o0qcxxmxjap4" path="res://assets/sprites/Player/P1_Side_Walk.png" id="1_ok6lk"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ok6lk"]
-atlas = ExtResource("1_ok6lk")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0ar2a"]
-atlas = ExtResource("1_ok6lk")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ccvhk"]
-atlas = ExtResource("1_ok6lk")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ua7lh"]
-atlas = ExtResource("1_ok6lk")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_egl3b"]
-atlas = ExtResource("1_ok6lk")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dm8bc"]
-atlas = ExtResource("1_ok6lk")
-region = Rect2(160, 0, 32, 32)
+[ext_resource type="Texture2D" uid="uid://bjf1ubiuvc5c7" path="res://assets/sprites/Lightning + Rod Sprites/Full Lightning Strike/Lightning 2_0000.png" id="1_dm8bc"]
+[ext_resource type="Texture2D" uid="uid://5q5nrif27oqr" path="res://assets/sprites/Lightning + Rod Sprites/Full Lightning Strike/Lightning 2_0001.png" id="2_fvuov"]
+[ext_resource type="Texture2D" uid="uid://bdflkm8oc2ocn" path="res://assets/sprites/Lightning + Rod Sprites/Full Lightning Strike/Lightning 2_0002.png" id="3_dpm7f"]
+[ext_resource type="Texture2D" uid="uid://ch8rtlefdrv41" path="res://assets/sprites/Lightning + Rod Sprites/Full Lightning Strike/Lightning 2_0003.png" id="4_723u6"]
+[ext_resource type="Texture2D" uid="uid://70ufkwqhg0pp" path="res://assets/sprites/Lightning + Rod Sprites/Full Lightning Strike/Lightning 2_0004.png" id="5_hl2vm"]
+[ext_resource type="Texture2D" uid="uid://lxoq0gadytko" path="res://assets/sprites/Lightning + Rod Sprites/Full Lightning Strike/Lightning 2_0005.png" id="6_c5kqd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ioeof"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ok6lk")
+"texture": ExtResource("1_dm8bc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0ar2a")
+"texture": ExtResource("2_fvuov")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ccvhk")
+"texture": ExtResource("3_dpm7f")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ua7lh")
+"texture": ExtResource("4_723u6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_egl3b")
+"texture": ExtResource("5_hl2vm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dm8bc")
+"texture": ExtResource("6_c5kqd")
 }],
 "loop": 1,
 "name": &"default",
-"speed": 5.0
+"speed": 50.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqmmp"]
@@ -62,6 +43,7 @@ z_index = 2
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ioeof")
 autoplay = "default"
+frame_progress = 0.9038166
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1727999847]
 

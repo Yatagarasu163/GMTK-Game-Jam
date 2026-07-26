@@ -11,7 +11,7 @@ var time_elapsed: float
 func _ready() -> void:
 	items_y_position.resize(len(items))
 	var tween = create_tween()
-	tween.tween_property(transitionBlock, "position:x", -1600, 0.25)
+	tween.tween_property(transitionBlock, "position:x", -transitionBlock.size.x, 0.25)
 	for i in range(len(items)):
 		var item_x_position = items[i].position.x
 		items_y_position[i] = items[i].position.y
@@ -37,4 +37,4 @@ func _on_back_pressed() -> void:
 	var tween = create_tween()
 	tween.tween_property(transitionBlock, "position:x", 0, 0.25)
 	await tween.finished
-	get_tree().change_scene_to_file("res://main_menu.tscn")
+	get_tree().change_scene_to_file("res://Menus/main_menu.tscn")
