@@ -153,7 +153,6 @@ physics_quadrant_size = 64
 [node name="Lightning Rods" parent="." unique_id=1430730632 instance=ExtResource("1_3hls8")]
 position = Vector2(288, 288.00003)
 scale = Vector2(0.45, 0.45)
-rod_name = "Rod 1"
 
 [node name="Lightning Rods4" parent="." unique_id=741082064 instance=ExtResource("1_3hls8")]
 position = Vector2(1056.0001, 288)
