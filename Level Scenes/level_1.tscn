@@ -414,7 +414,6 @@ label_settings = SubResource("LabelSettings_jqmmp")
 
 [node name="Player 1" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=662222531]
 process_mode = 3
-visible = false
 position = Vector2(342.00003, 547.0001)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_jqmmp")
@@ -422,7 +421,6 @@ animation = &"player_live"
 
 [node name="Player 2" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1191544347]
 process_mode = 3
-visible = false
 position = Vector2(1686.0002, 546.0001)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_mnyab")
@@ -436,18 +434,48 @@ rendering_quadrant_size = 64
 physics_quadrant_size = 64
 
 [node name="Lightning Rods" parent="." unique_id=1430730632 instance=ExtResource("1_3hls8")]
-position = Vector2(288, 288.00003)
+position = Vector2(289, 351.00003)
+rod_name = "Rod 1"
+
+[node name="Lightning Rods3" parent="." unique_id=725081302 instance=ExtResource("1_3hls8")]
+position = Vector2(288, 480)
+rod_name = "Rod 1"
+
+[node name="Lightning Rods6" parent="." unique_id=202480544 instance=ExtResource("1_3hls8")]
+position = Vector2(161, 479.00003)
+rod_name = "Rod 1"
+
+[node name="Lightning Rods7" parent="." unique_id=1157385018 instance=ExtResource("1_3hls8")]
+position = Vector2(161, 351.00003)
 rod_name = "Rod 1"
 
 [node name="Lightning Rods2" parent="." unique_id=241148872 instance=ExtResource("1_3hls8")]
 position = Vector2(480, 417.00003)
 rod_name = "Rod 1"
 
-[node name="Lightning Rods4" parent="." unique_id=741082064 instance=ExtResource("1_3hls8")]
-position = Vector2(1056.0001, 288)
+[node name="Lightning Rods9" parent="." unique_id=1979855961 instance=ExtResource("1_3hls8")]
+position = Vector2(1118.0001, 927)
 
-[node name="Lightning Rods5" parent="." unique_id=1858303453 instance=ExtResource("1_3hls8")]
-position = Vector2(1056, 480)
+[node name="Lightning Rods10" parent="." unique_id=2095626296 instance=ExtResource("1_3hls8")]
+position = Vector2(800, 865)
+
+[node name="Lightning Rods11" parent="." unique_id=2113727299 instance=ExtResource("1_3hls8")]
+position = Vector2(1569, 862)
+
+[node name="Lightning Rods12" parent="." unique_id=201256659 instance=ExtResource("1_3hls8")]
+position = Vector2(1697, 672)
+
+[node name="Lightning Rods13" parent="." unique_id=680508902 instance=ExtResource("1_3hls8")]
+position = Vector2(1570, 672)
+
+[node name="Lightning Rods14" parent="." unique_id=227637503 instance=ExtResource("1_3hls8")]
+position = Vector2(1503.0001, 543)
+
+[node name="Lightning Rods15" parent="." unique_id=1206179995 instance=ExtResource("1_3hls8")]
+position = Vector2(543, 737)
+
+[node name="Lightning Rods16" parent="." unique_id=1878626280 instance=ExtResource("1_3hls8")]
+position = Vector2(416.00003, 927)
 
 [node name="walls" type="TileMapLayer" parent="." unique_id=1760256429 groups=["WALL"]]
 scale = Vector2(2, 2)
@@ -457,9 +485,10 @@ physics_quadrant_size = 32
 
 [node name="obstacles" type="TileMapLayer" parent="." unique_id=1171748427 groups=["WALL"]]
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAACAAYAAAAAAAEAAAADAAYAAAABAAEAAAADAAUAAAABAAAAAAAEAAYAAAACAAEAAAADAAcAAAABAAIAAAADAAkAAQAAAAAAAAAFAAkAAQACAAAAAAAFAAsAAQACAAIAAAAGAA0AAAAAAAEAAAAHAA0AAQACAAAAAAAHAA4AAAABAAIAAAAHAAUAAAAAAAEAAAAIAAUAAQACAAAAAAAIAAYAAQACAAEAAAAIAAcAAQACAAEAAAAIAAgAAAABAAIAAAALAAcAAQAAAAAAAAALAAgAAQAAAAIAAAAMAAgAAQACAAIAAAAMAAcAAQACAAAAAAAIAAoAAAAAAAEAAAAJAAsAAAABAAIAAAAPAAsAAAABAAIAAAAPAAoAAAABAAAAAAAQAAkAAAABAAIAAAAQAAgAAAABAAAAAAARAAcAAAABAAIAAAARAAYAAAABAAAAAAAUAAUAAAABAAAAAAAUAAYAAQACAAEAAAAUAAcAAQACAAEAAAAUAAgAAAABAAIAAAATAAsAAAAAAAEAAAAUAAsAAQACAAAAAAAUAAwAAQAAAAIAAAAVAAwAAAACAAEAAAAMAA4AAAAAAAEAAAANAA4AAQACAAIAAAANAA0AAAABAAAAAAAXAAoAAAABAAIAAAAYAAkAAQACAAIAAAAYAAgAAAABAAAAAAAaAAsAAAAAAAEAAAAbAAoAAAABAAAAAAAJAAoAAQACAAAAAAADAAsAAQAAAAIAAAAXAAkAAQAAAAAAAAAbAAsAAQACAAIAAAAXAAwAAQAAAAAAAAAXAA0AAAABAAIAAAAYAAwAAAACAAEAAAAbAAUAAQACAAAAAAAbAAYAAQACAAEAAAAbAAcAAQACAAIAAAAaAAUAAQAAAAAAAAAaAAYAAQACAAEAAAAaAAcAAQAAAAIAAAAXAAUAAAABAAIAAAAXAAQAAAABAAAAAAADAAoAAQAAAAEAAAAFAAoAAQACAAEAAAAEAAsAAQABAAIAAAAEAAkAAQABAAAAAAASAA0AAQACAAAAAAASAA4AAAABAAIAAAARAA0AAAAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAACAAYAAAAAAAEAAAADAAYAAAABAAEAAAADAAUAAAABAAAAAAAEAAYAAAACAAEAAAADAAcAAAABAAIAAAADAAkAAQAAAAAAAAAFAAkAAQACAAAAAAAFAAsAAQACAAIAAAAGAA0AAAAAAAEAAAAHAA0AAQACAAAAAAAHAA4AAAABAAIAAAAHAAUAAAAAAAEAAAAIAAUAAQACAAAAAAAIAAYAAQACAAEAAAAIAAcAAQACAAEAAAAIAAgAAAABAAIAAAALAAcAAQAAAAAAAAALAAgAAQAAAAIAAAAMAAgAAQACAAIAAAAMAAcAAQACAAAAAAAIAAoAAAAAAAEAAAAJAAsAAAABAAIAAAAPAAsAAAABAAIAAAAPAAoAAAABAAAAAAAQAAkAAAABAAIAAAAQAAgAAAABAAAAAAARAAcAAAABAAIAAAARAAYAAAABAAAAAAAUAAUAAAABAAAAAAAUAAYAAQACAAEAAAAUAAcAAQACAAEAAAAUAAgAAAABAAIAAAAMAA4AAAAAAAEAAAANAA4AAQACAAIAAAANAA0AAAABAAAAAAAXAAoAAAABAAIAAAAYAAkAAQACAAIAAAAYAAgAAAABAAAAAAAaAAsAAAAAAAEAAAAbAAoAAAABAAAAAAAJAAoAAQACAAAAAAADAAsAAQAAAAIAAAAXAAkAAQAAAAAAAAAbAAsAAQACAAIAAAAXAAwAAQAAAAAAAAAXAA0AAAABAAIAAAAYAAwAAAACAAEAAAAbAAUAAQACAAAAAAAbAAYAAQACAAEAAAAbAAcAAQACAAIAAAAaAAUAAQAAAAAAAAAaAAYAAQACAAEAAAAaAAcAAQAAAAIAAAAXAAUAAAABAAIAAAAXAAQAAAABAAAAAAADAAoAAQAAAAEAAAAFAAoAAQACAAEAAAAEAAsAAQABAAIAAAAEAAkAAQABAAAAAAASAA0AAQACAAAAAAASAA4AAAABAAIAAAARAA0AAAAAAAEAAAAEAAoAAQABAAEAAAA=")
 tile_set = SubResource("TileSet_5rr72")
 rendering_quadrant_size = 32
+collision_visibility_mode = 1
 physics_quadrant_size = 32
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1750559774]
